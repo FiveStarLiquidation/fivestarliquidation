@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Star Liquidation | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+<style>
+    :root {
+        --black: #000000;
+        --gold: #d4af37;
+        --white: #ffffff;
+        --red: #e74c3c;
+    }
+
+    body {
+        margin: 0; padding: 0;
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--white);
+        overflow-x: hidden;
+    }
+
+    /* --- FIXED HEADER --- */
+    header {
+        background-color: var(--black);
+        padding: 20px 10px;
+        text-align: center;
+        border-bottom: 4px solid var(--gold);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-logo {
+        width: 100%;
+        max-width: 400px; /* Smaller max-width for product pages */
+        height: auto;
+        display: block;
+    }
+
+    /* --- PRODUCT PAGE LAYOUT --- */
+    .product-container {
+        max-width: 1100px;
+        margin: 20px auto;
+        padding: 0 20px;
+        display: flex;
+        flex-wrap: wrap; /* Allows stacking on mobile */
+        gap: 40px;
+    }
+
+    /* Image Gallery Section */
+    .product-image-section {
+        flex: 1 1 500px; /* Take half width on desktop */
+        max-width: 100%;
+    }
+
+    .main-product-img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        object-fit: contain;
+        background: #f9f9f9;
+        display: block;
+    }
+
+    .thumbnail-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .thumbnail-row img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 5px;
+        cursor: pointer;
+        border: 2px solid transparent;
+    }
+
+    /* Product Info Section */
+    .product-info-section {
+        flex: 1 1 400px;
+        max-width: 100%;
+    }
+
+    .product-title {
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+        font-weight: 900;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    .price-block {
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .current-price {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--black);
+    }
+
+    .old-price {
+        font-size: 1.2rem;
+        color: #999;
+        text-decoration: line-through;
+    }
+
+    .description {
+        line-height: 1.6;
+        color: #444;
+        font-size: 1rem;
+    }
+
+    /* --- MOBILE FIXES (Screen < 768px) --- */
+    @media (max-width: 768px) {
+        .product-container {
+            flex-direction: column; /* Stacks image on top of text */
+            gap: 20px;
+            padding: 0 15px;
+        }
+
+        .product-image-section, .product-info-section {
+            flex: 1 1 100%;
+        }
+
+        .main-product-img {
+            border-radius: 0; /* Full width feel on mobile */
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+        }
+
+        .main-logo {
+            max-width: 80%; /* Shrink logo slightly for mobile */
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo-link">
+        <!-- New Logo Integration -->
+        <img src="IMG_0000.jpg" alt="Five Star Liquidation" class="main-logo">
+    </a>
+
+    <div class="info-bar">
+        <a href="https://maps.google.com" target="_blank" class="badge">
+            <i class="fas fa-map-marker-alt"></i> 2429 Lawrenceville Hwy, GA
+        </a>
+        <a href="tel:4706365237" class="badge">
+            <i class="fas fa-phone-alt"></i> (470) 636-5237
+        </a>
+    </div>
+</header>
+
+<nav>
+    <a href="washers-archive.html">Washers</a>
+    <a href="dryers-archive.html">Dryers</a>
+    <a href="fridges-archive.html">Refrigerators</a>
+    <a href="stoves-archive.html">Stoves & Ovens</a>
+    <a href="microwaves-archive.html">Microwaves</a>
+    <a href="freezers-archive.html">Freezers</a>
+</nav>
+
+<div class="product-container">
+    <nav class="back-nav">
+        <a href="fridges-archive.html">← Back to Refrigerators</a>
+    </nav>
+    
+    <div class="product-details-wrapper">
+        <div class="image-gallery">
+            <div class="main-product-image">
+                <img id="featured" src="IMG_2664.PNG" alt="LG GrandVision 30 Refrigerator Main View">
+            </div>
+
+            <div class="thumbnail-container">
+                <img src="IMG_2664.PNG" class="active" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+                <img src="IMG_2635.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+                <img src="IMG_2636.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+                <img src="IMG_2637.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+                <img src="IMG_2638.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+                <img src="IMG_2639.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+                <img src="IMG_2640.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+            </div>
+        </div>
+
+        <div class="product-info-section">
+            <span class="category">Smart InstaView™ Refrigerator</span>
+            <h1>LG GrandVision™ 30: InstaView™ Refrigerator with Craft Ice & Multi-Convert Drawer</h1>
+            
+            <div class="price-details">
+                <span class="current-price">$2,400</span>
+                <span class="old-price">$4,799</span>
+            </div>
+
+            <div class="product-description">
+                <p>Elevate your kitchen with the <strong>LG GrandVision™ 30</strong>. This premium refrigerator combines stunning aesthetics with high-end utility, featuring a knock-on glass panel that lets you see inside without opening the door.</p>
+                
+                <ul class="features-list">
+                    <li><strong>InstaView™ Door-in-Door®:</strong> Knock twice on the glass to see your favorites without losing cold air.</li>
+                    <li><strong>Craft Ice™ Maker:</strong> Automatically produces slow-melting round craft ice for upscale drinks at home.</li>
+                    <li><strong>Full-Convert™ Drawer:</strong> Choose from five temperature settings to chill wine, store deli items, or freeze food.</li>
+                    <li><strong>30 cu. ft. Ultra-Capacity:</strong> Designed to fit all your groceries with room to spare for large party platters.</li>
+                    <li><strong>CoolGuard™ Stainless Steel:</strong> Interior metal paneling helps maintain cold air while adding a premium interior look.</li>
+                    <li><strong>ThinQ® Smart Technology:</strong> Adjust temperatures and receive alerts directly on your smartphone.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updateThumbnails(activeImg) {
+        const thumbnails = document.querySelectorAll('.thumbnail-container img');
+        thumbnails.forEach(img => img.classList.remove('active'));
+        activeImg.classList.add('active');
+    }
+</script>
+
+<footer>
+    <p>© 2026 Five Star Liquidation - Premium Outlet Deals</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Star Liquidation | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+<style>
+        :root {
+            --black: #000000;
+            --gold: #d4af37;
+            --white: #ffffff;
+            --red: #e74c3c;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        /* --- HEADER & LOGO FIXED --- */
+        header {
+            background-color: var(--black);
+            padding: 20px 10px; /* Reduced for better mobile fit */
+            text-align: center;
+            border-bottom: 4px solid var(--gold);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo-link {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 15px;
+        }
+
+        .main-logo {
+            width: 100%;
+            max-width: 100%;
+            height: auto; /* Maintains aspect ratio */
+            display: block;
+            margin: 0 auto;
+        }
+
+        .info-bar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            color: var(--white);
+            text-decoration: none;
+            padding: 8px 15px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.7rem;
+            transition: 0.3s;
+        }
+
+        /* --- NAV BAR --- */
+        nav {
+            background: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            border-bottom: 1px solid #eee;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: 800;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        /* --- PRODUCT GRID SYSTEM (FLEX-BASED) --- */
+        .category-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 15px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .products-grid {
+            display: flex;
+            flex-wrap: wrap; /* Allows wrapping on mobile */
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            flex: 1 1 calc(33.333% - 20px); /* 3 items on desktop */
+            min-width: 280px; /* Prevents cards from getting too thin */
+            max-width: 380px;
+            border: 1px solid #f0f0f0;
+            padding: 15px;
+            text-align: center;
+            background: white;
+            position: relative;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px; /* Standardized height */
+            object-fit: contain; /* Prevents stretching */
+            margin-bottom: 15px;
+        }
+
+        /* --- MOBILE ADJUSTMENTS --- */
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 100%; /* Full width on mobile */
+                max-width: 100%;
+            }
+            
+            .main-logo {
+                width: 90%; /* Logo doesn't hit screen edges */
+            }
+
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo-link">
+        <!-- New Logo Integration -->
+        <img src="IMG_0000.jpg" alt="Five Star Liquidation" class="main-logo">
+    </a>
+
+    <div class="info-bar">
+        <a href="https://maps.google.com" target="_blank" class="badge">
+            <i class="fas fa-map-marker-alt"></i> 2429 Lawrenceville Hwy, GA
+        </a>
+        <a href="tel:4706365237" class="badge">
+            <i class="fas fa-phone-alt"></i> (470) 636-5237
+        </a>
+    </div>
+</header>
+
+<nav>
+    <a href="washers-archive.html">Washers</a>
+    <a href="dryers-archive.html">Dryers</a>
+    <a href="fridges-archive.html">Refrigerators</a>
+    <a href="stoves-archive.html">Stoves & Ovens</a>
+    <a href="microwaves-archive.html">Microwaves</a>
+    <a href="freezers-archive.html">Freezers</a>
+</nav>
+
+<div class="product-container">
+    <nav class="back-nav">
+        <a href="fridges-archive.html">← Back to Refrigerators</a>
+    </nav>
+    
+    <div class="product-details-wrapper">
+        <div class="image-gallery">
+            <div class="main-product-image">
+                <img id="featured" src="IMG_2587.PNG" alt="Samsung Bespoke FlexiNode Main View">
+            </div>
+
+            <div class="thumbnail-container">
+                <img src="IMG_2587.PNG" class="active" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+                <img src="IMG_2517.JPEG" class="active" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+                <img src="IMG_2518.JPEG" class="active" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+                <img src="IMG_2519.JPEG" class="active" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+                <img src="IMG_2520.JPEG" class="active" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+            </div>
+        </div>
+
+        <div class="product-info-section">
+            <span class="category">Bespoke Counter-Depth 4-Door Flex</span>
+            <h1>Samsung Bespoke FlexiNode™ 23 cu. ft. Counter Depth 4-Door Flex Refrigerator with Beverage Center</h1>
+            
+            <div class="price-details">
+                <span class="current-price">$1,900</span>
+                <span class="old-price">$3,799</span>
+            </div>
+
+            <div class="product-description">
+                <p>The <strong>Samsung Bespoke FlexiNode™</strong> represents the ultimate in kitchen customization and efficiency. Designed with a sleek counter-depth profile to align perfectly with your cabinetry, this unit features the revolutionary 4-Door Flex™ layout, allowing you to adapt your cooling space to your lifestyle.</p>
+                
+                <ul class="features-list">
+                    <li><strong>4-Door Flex™ Technology:</strong> The lower-right compartment is a versatile zone that can switch between fridge and freezer temperatures with five customizable settings.</li>
+                    <li><strong>Internal Beverage Center™:</strong> Enjoy easy access to fresh, filtered water through both an internal dispenser and an Autofill Water Pitcher, all tucked away for a seamless exterior.</li>
+                    <li><strong>Counter-Depth Design:</strong> Offers a built-in look that sits flush with standard kitchen countertops, maximizing your floor space without sacrificing style.</li>
+                    <li><strong>Dual Auto Ice Maker:</strong> Produces both standard Cubed Ice and smaller Ice Bites™ so you're always ready for any beverage or occasion.</li>
+                    <li><strong>Triple Cooling System:</strong> High-efficiency independent coolers optimize temperature and humidity in all three zones while preventing odor mixing.</li>
+                    <li><strong>Smart Wi-Fi Connectivity:</strong> Control settings and monitor your refrigerator remotely via the SmartThings app, receiving alerts if the door is left open.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updateThumbnails(activeImg) {
+        const thumbnails = document.querySelectorAll('.thumbnail-container img');
+        thumbnails.forEach(img => img.classList.remove('active'));
+        activeImg.classList.add('active');
+    }
+</script>
+
+<footer>
+    <p>© 2026 Five Star Liquidation - Premium Outlet Deals</p>
+</footer>
+
+</body>
+</html>
