@@ -96,49 +96,16 @@
             align-items: flex-start;
         }
 
-        /* --- COMPACT SCROLLING GALLERY --- */
+        /* --- GALLERY LAYOUT (Thumbnails Under Main) --- */
         .gallery-container {
             display: flex;
+            flex-direction: column; /* Stack main image over thumbnails */
             gap: 15px;
             width: 100%;
         }
 
-        .thumbnail-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-height: 550px; 
-            overflow-y: auto;
-            width: 90px;
-            padding-right: 5px;
-        }
-
-        /* Custom Scrollbar for side gallery */
-        .thumbnail-sidebar::-webkit-scrollbar {
-            width: 5px;
-        }
-        .thumbnail-sidebar::-webkit-scrollbar-thumb {
-            background: var(--gold);
-            border-radius: 10px;
-        }
-
-        .thumbnail-sidebar img {
-            width: 75px;
-            height: 75px;
-            object-fit: cover;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-            flex-shrink: 0;
-        }
-
-        .thumbnail-sidebar img.active {
-            border-color: var(--gold);
-        }
-
         .main-display {
-            flex-grow: 1;
+            width: 100%;
             background: var(--gray);
             border-radius: 15px;
             border: 1px solid #ddd;
@@ -154,6 +121,34 @@
             max-height: 100%;
             object-fit: contain;
             padding: 20px;
+        }
+
+        /* --- THUMBNAIL GRID (5 PER LINE) --- */
+        .thumbnail-sidebar {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            gap: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            max-height: none !important; /* Remove height restriction */
+            overflow-y: visible !important;
+        }
+
+        .thumbnail-sidebar img {
+            /* Calculate width: (100% - total gap space) / 5 images */
+            width: calc((100% - 32px) / 5) !important; 
+            aspect-ratio: 1 / 1 !important;
+            object-fit: cover !important;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-sizing: border-box !important;
+        }
+
+        .thumbnail-sidebar img.active {
+            border-color: var(--gold);
         }
 
         /* --- PRODUCT INFO --- */
@@ -239,18 +234,11 @@
             .product-details-wrapper {
                 grid-template-columns: 1fr;
             }
-            .gallery-container {
-                flex-direction: column-reverse;
-            }
-            .thumbnail-sidebar {
-                flex-direction: row;
-                width: 100%;
-                overflow-x: auto;
-                max-height: none;
-                padding-bottom: 10px;
-            }
             .main-display {
                 height: 400px;
+            }
+            .thumbnail-sidebar img {
+                width: calc((100% - 24px) / 4) !important; /* 4 per line on smaller mobile for better visibility */
             }
         }
 
@@ -296,8 +284,12 @@
     
     <div class="product-details-wrapper">
         
-        <!-- SIDEBAR GALLERY -->
+        <!-- UPDATED GALLERY -->
         <div class="gallery-container">
+            <div class="main-display">
+                <img id="featured" src="IMG_2570.PNG" alt="LG TitanSteam 9.0">
+            </div>
+
             <div class="thumbnail-sidebar" id="thumbBar">
                 <img src="IMG_2570.PNG" class="active" onclick="updateGallery(this)">
                 <img src="IMG_2335.JPEG" onclick="updateGallery(this)">
@@ -310,9 +302,6 @@
                 <img src="IMG_2347.JPEG" onclick="updateGallery(this)">
                 <img src="IMG_2348.JPEG" onclick="updateGallery(this)">
                 <img src="IMG_2349.JPEG" onclick="updateGallery(this)">
-            </div>
-            <div class="main-display">
-                <img id="featured" src="IMG_2570.PNG" alt="LG TitanSteam 9.0">
             </div>
         </div>
 
