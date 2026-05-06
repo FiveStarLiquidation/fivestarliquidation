@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Five Star Liquidation | Washers Archive</title>
+    <title>Five Star Liquidation | Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     
@@ -22,57 +22,31 @@
             overflow-x: hidden;
         }
 
-        /* --- كود غطاء الفيديو المطور --- */
-        #washing-loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fff; /* خلفية بيضاء لضمان عدم ظهور الأرشيف قبل انتهاء الفيديو */
-            z-index: 10000; /* ليكون فوق كل محتوى الصفحة */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-
-        #washing-loader video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* ليملأ الفيديو الشاشة بالكامل */
-        }
-
-        /* حالة الاختفاء بعد انتهاء الـ 4 ثواني */
-        .loader-hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-        /* --- نهاية كود الفيديو --- */
-
+        /* Header Section - FIXED FOR FLEXIBILITY */
         header {
             background-color: var(--black);
             padding: 40px 20px;
             text-align: center;
             border-bottom: 4px solid var(--gold);
-            display: flex;
-            flex-direction: column;
+            display: flex; /* Added flex */
+            flex-direction: column; /* Stack items */
             align-items: center;
-            box-sizing: border-box;
+            box-sizing: border-box; /* Prevent padding overflow */
             width: 100%;
         }
 
+        /* Logo Link - FIXED FOR FLEXIBILITY */
         .logo-link {
             display: block;
             width: 100%;
-            max-width: 600px;
+            max-width: 600px; /* Limits size on large screens */
             margin-bottom: 15px;
         }
 
+        /* Main Logo Image - FIXED FOR FLEXIBILITY */
         .main-logo {
-            width: 100%;
-            height: auto;
+            width: 100%;      /* Scales down on small screens */
+            height: auto;     /* Maintains aspect ratio */
             display: block;
         }
 
@@ -108,6 +82,7 @@
             color: var(--gold);
         }
 
+        /* Nav Bar */
         nav {
             background: white;
             padding: 15px 0;
@@ -132,6 +107,7 @@
 
         nav a:hover { color: var(--gold); }
 
+        /* Category Wrapper */
         .category-wrapper {
             max-width: 1200px;
             margin: 40px auto;
@@ -159,6 +135,7 @@
             transform: scale(1.02); 
         }
 
+        /* Grid for 3 items per row */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -198,25 +175,17 @@
             transform: scale(1.08);
         }
 
-        #lg-washtower-sold img {
-            filter: grayscale(100%);
-            opacity: 0.5;
-        }
-
-        #lg-washtower-sold .ribbon {
+        .sold-out-badge {
             position: absolute;
-            top: 18px;
-            left: -35px;
-            background-color: var(--red);
+            top: 10px;
+            left: 10px;
+            background: var(--red);
             color: white;
-            width: 150px;
-            padding: 8px 0;
-            font-size: 0.85rem;
+            padding: 4px 10px;
             font-weight: 900;
-            text-transform: uppercase;
-            transform: rotate(-45deg);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 10;
+            font-size: 0.65rem;
+            border-radius: 4px;
+            z-index: 5;
         }
 
         .name { 
@@ -241,19 +210,12 @@
 </head>
 <body>
 
-<!-- شاشة الفيديو تظهر أولاً وتغطي الصفحة -->
-<div id="washing-loader">
-    <video id="washerVideo" autoplay muted playsinline>
-        <!-- تأكدي من تسمية ملفك بهذا الاسم أو تعديله هنا -->
-        <source src="washer-open.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
-
 <header>
     <a href="index.html" class="logo-link">
+        <!-- New Logo Integration -->
         <img src="IMG_0000.jpg" alt="Five Star Liquidation" class="main-logo">
     </a>
+
     <div class="info-bar">
         <a href="https://maps.google.com" target="_blank" class="badge">
             <i class="fas fa-map-marker-alt"></i> 2429 Lawrenceville Hwy, GA
@@ -273,53 +235,101 @@
     <a href="freezers-archive.html">Freezers</a>
 </nav>
 
+
 <div class="category-wrapper">
-    <a href="washers-archive.html" class="section-header"><h2>Washers Archive</h2></a>
-    
+
+    <a href="washers-archive.html" class="section-header"><h2>Washers</h2></a>
     <div class="products-grid">
-        <!-- Product 1 -->
         <div class="card" onclick="window.location.href='lg-thinq-turbo360-washer.html';" style="cursor: pointer;">
-            <img src="IMG_2574.PNG" alt="Washer">
-            <span class="name">LG ThinQ Turbo360 – Smart AI Front Load Washer (White)</span>
-            <div class="price">
-                <span class="old-price">$1,499</span>$750
-            </div>
-        </div>
+    <img src="IMG_2574.PNG" alt="Washer">
+    <span class="name">LG ThinQ Turbo360 – Smart AI Front Load Washer (White)</span>
+    <div class="price">
+        <span class="old-price">$1,499</span>$750
+    </div>
+</div>
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Product Sold Out</title>
+    <style>
+        /* General styling for ALL cards on your site */
+        .card {
+            border: 1px solid #ececec;
+            border-radius: 16px;
+            width: 320px;
+            font-family: 'Inter', sans-serif;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 24px;
+            background-color: #ffffff;
+            text-align: center;
+            overflow: hidden;
+        }
 
-        <!-- Product 2 (Sold Out) -->
-        <div class="card" id="lg-washtower-sold">
-            <div class="ribbon">Sold Out</div>
-            <img src="IMG_2576.PNG" alt="LG OnyxSync™ AI WashTower">
-            <span class="name">LG OnyxSync™ AI WashTower: Integrated Smart Washer & Steam Dryer Suite</span>
-            <div class="price">
-                <span class="old-price">$2,899</span>$1,400
-            </div>
-        </div>
+        .card img { width: 100%; height: auto; margin-bottom: 20px; }
+        .card .name { font-weight: 700; color: #222; }
 
-        <!-- Product 3 -->
-        <div class="card" onclick="window.location.href='maytag-titanclean-top-loader-washer.html';" style="cursor: pointer;">
+        /* --- SPECIFIC SOLD OUT LOGIC FOR THIS ITEM ONLY --- */
+        
+        /* This targets ONLY the element with id="lg-washtower-sold" */
+        #lg-washtower-sold img {
+            filter: grayscale(100%);
+            opacity: 0.5;
+        }
+
+        #lg-washtower-sold .name, 
+        #lg-washtower-sold .current-price {
+            color: #999 !important;
+        }
+
+        /* The Ribbon for this specific item */
+        #lg-washtower-sold .ribbon {
+            position: absolute;
+            top: 18px;
+            left: -35px;
+            background-color: #ff0000;
+            color: white;
+            width: 150px;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            transform: rotate(-45deg);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="lg-washtower-sold">
+        <div class="ribbon">Sold Out</div>
+        
+        <img src="IMG_2576.PNG" alt="LG OnyxSync™ AI WashTower">
+        
+        <span class="name">LG OnyxSync™ AI WashTower: Integrated Smart Washer & Steam Dryer Suite</span>
+        
+        <div class="price-container">
+            <span style="text-decoration: line-through; color: #bbb;">$2,899</span>
+            <span class="current-price" style="font-size: 1.5rem; font-weight: 800;">$1,400</span>
+        </div>
+    </div>
+
+</body>
+</html>
+           <div class="card" onclick="window.location.href='maytag-titanclean-top-loader-washer.html';" style="cursor: pointer;">
             <img src="IMG_2571.PNG" alt="Washer">
             <span class="name">Maytag TitanClean™ 4.5 cu. ft. Top Loader | Deep-Pro High Efficiency Washer</span>
             <div class="price"><span class="old-price">$900</span>$500</div>
         </div>
     </div>
-</div>
-
 <footer>
     © 2026 Five Star Liquidation
 </footer>
-
-<script>
-    // التحكم في اختفاء الفيديو بناءً على المدة (4 ثواني)
-    window.addEventListener('load', () => {
-        const loader = document.getElementById('washing-loader');
-        
-        // سنخفي الفيديو عند الثانية 3.8 ليكون الانتقال لصفحة الأرشيف ناعماً جداً
-        setTimeout(() => {
-            loader.classList.add('loader-hidden');
-        }, 3800); 
-    });
-</script>
 
 </body>
 </html>
