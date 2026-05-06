@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LG ThinQ Turbo360 | Five Star Liquidation</title>
+    <title>Frigidaire Professional OmniVault | Five Star Liquidation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
@@ -76,60 +76,47 @@
             text-transform: uppercase;
         }
 
-        /* --- PRODUCT SECTION LAYOUT --- */
+        /* --- PRODUCT LAYOUT --- */
         .product-container {
             max-width: 1200px;
             margin: 20px auto;
             padding: 0 20px;
         }
 
-        .back-nav {
-            margin-bottom: 20px;
-            justify-content: flex-start;
-            border: none;
-        }
-
         .product-details-wrapper {
-            display: flex;
-            flex-direction: column; /* عمودي للموبايل */
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
             gap: 40px;
             align-items: flex-start;
         }
 
-        /* --- IMAGE GALLERY --- */
-        .image-gallery {
-            width: 100%;
-            flex: 1;
-            max-width: 550px; /* تحديد عرض الصور */
-            margin: 0 auto;
-        }
-
-        .main-product-image {
-            width: 100%;
-            background: var(--gray);
-            border-radius: 15px;
-            overflow: hidden;
+        /* --- IMPROVED IMAGE GALLERY --- */
+        .gallery-layout {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ddd;
-            margin-bottom: 15px;
+            gap: 15px;
         }
 
-        .main-product-image img {
-            width: 100%;
-            max-height: 450px;
-            object-fit: contain; /* للحفاظ على شكل الغسالة */
-            padding: 10px;
-        }
-
-        .thumbnail-container {
+        /* Vertical Thumbnail Strip */
+        .thumbnail-strip {
             display: flex;
+            flex-direction: column;
             gap: 10px;
-            justify-content: center;
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 5px;
+            width: 80px;
         }
 
-        .thumbnail-container img {
+        /* Custom Scrollbar for Thumbnails */
+        .thumbnail-strip::-webkit-scrollbar {
+            width: 4px;
+        }
+        .thumbnail-strip::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 10px;
+        }
+
+        .thumbnail-strip img {
             width: 70px;
             height: 70px;
             object-fit: cover;
@@ -137,18 +124,32 @@
             border-radius: 8px;
             cursor: pointer;
             transition: 0.3s;
+            flex-shrink: 0;
         }
 
-        .thumbnail-container img.active {
+        .thumbnail-strip img.active {
             border-color: var(--gold);
         }
 
-        /* --- PRODUCT INFO --- */
-        .product-info-section {
-            flex: 1;
-            width: 100%;
+        .main-stage {
+            flex-grow: 1;
+            background: var(--gray);
+            border-radius: 15px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+            overflow: hidden;
         }
 
+        .main-stage img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* --- INFO SECTION --- */
         .category {
             color: var(--gold);
             text-transform: uppercase;
@@ -169,7 +170,7 @@
         }
 
         .current-price {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 900;
             color: var(--red);
         }
@@ -181,27 +182,45 @@
             font-size: 1.2rem;
         }
 
+        .reserve-button {
+            display: block;
+            width: 100%;
+            background: var(--black);
+            color: var(--gold);
+            text-align: center;
+            padding: 18px;
+            text-decoration: none;
+            font-weight: 900;
+            border-radius: 5px;
+            margin: 25px 0;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            border: 2px solid var(--black);
+            transition: 0.3s;
+        }
+
+        .reserve-button:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
         .features-list {
-            padding-left: 20px;
+            padding-left: 0;
+            list-style: none;
             margin-top: 20px;
         }
 
         .features-list li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-size: 0.95rem;
+            display: flex;
+            gap: 10px;
         }
 
-        /* --- DESKTOP ADJUSTMENTS --- */
-        @media (min-width: 900px) {
-            .product-details-wrapper {
-                flex-direction: row; /* الصور جنب النصوص */
-                align-items: flex-start;
-            }
-            
-            .image-gallery {
-                position: sticky;
-                top: 100px;
-            }
+        .features-list li::before {
+            content: "✓";
+            color: var(--gold);
+            font-weight: bold;
         }
 
         footer {
@@ -212,15 +231,32 @@
             margin-top: 50px;
             font-size: 0.8rem;
         }
+
+        @media (max-width: 900px) {
+            .product-details-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .gallery-layout {
+                flex-direction: column-reverse;
+            }
+            .thumbnail-strip {
+                flex-direction: row;
+                width: 100%;
+                overflow-x: auto;
+                max-height: none;
+            }
+            .main-stage {
+                height: 350px;
+            }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html" class="logo-link">
+    <a href="index.html">
         <img src="IMG_0000.jpg" alt="Five Star Liquidation" class="main-logo">
     </a>
-
     <div class="info-bar">
         <a href="https://maps.google.com" target="_blank" class="badge">
             <i class="fas fa-map-marker-alt"></i> 2429 Lawrenceville Hwy, GA
@@ -241,51 +277,50 @@
 </nav>
 
 <div class="product-container">
-    <nav class="back-nav">
-        <a href="stoves-archive.html">← Back to Stoves & Ovens</a>
-    </nav>
-    
     <div class="product-details-wrapper">
-        <div class="image-gallery">
-            <div class="main-product-image">
-                <img id="featured" src="IMG_5555.JPEG.png" alt="Frigidaire Professional OmniVault Main View">
+        
+        <!-- ENHANCED GALLERY -->
+        <div class="gallery-layout">
+            <div class="thumbnail-strip">
+                <img src="IMG_5555.JPEG.png" class="active" onclick="updateFeatured(this)">
+                <img src="IMG_2405.JPEG" onclick="updateFeatured(this)">
+                <img src="IMG_2406.JPEG" onclick="updateFeatured(this)">
+                <img src="IMG_2407.JPEG" onclick="updateFeatured(this)">
+                <img src="IMG_2408.JPEG" onclick="updateFeatured(this)">
+                <img src="IMG_2409.JPEG" onclick="updateFeatured(this)">
+                <img src="IMG_2410.JPEG" onclick="updateFeatured(this)">
+                <img src="IMG_2411.JPEG" onclick="updateFeatured(this)">
+                <img src="IMG_2412.JPEG" onclick="updateFeatured(this)">
+                <img src="IMG_2413.JPEG" onclick="updateFeatured(this)">
+                <img src="IMG_2414.JPEG" onclick="updateFeatured(this)">
             </div>
-
-            <div class="thumbnail-container">
-                <img src="IMG_5555.JPEG.png" class="active" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2405.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2406.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2407.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2408.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2409.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2410.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2411.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2412.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2413.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2414.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                
+            <div class="main-stage">
+                <img id="featured" src="IMG_5555.JPEG.png" alt="Frigidaire Professional OmniVault">
             </div>
         </div>
 
         <div class="product-info-section">
             <span class="category">Professional Double Wall Oven</span>
-            <h1>Frigidaire Professional OmniVault™ 30 in. Double Wall Oven with Total Convection</h1>
+            <h1>Frigidaire Professional OmniVault™ 30 in. Double Wall Oven</h1>
             
             <div class="price-details">
                 <span class="current-price">$1,900</span>
                 <span class="old-price">$3,999</span>
             </div>
 
+            <a href="tel:4706365237" class="reserve-button">
+                <i class="fas fa-phone-alt"></i> Call to Reserve
+            </a>
+
             <div class="product-description">
-                <p>The <strong>Frigidaire Professional OmniVault™</strong> is designed for those who take their culinary craft seriously. This 30-inch double wall oven offers unmatched versatility with Total Convection in both cavities, allowing you to master everything from air-fried snacks to multi-rack convection roasts simultaneously.</p>
+                <p>Designed for professional-grade culinary performance, featuring Total Convection in both cavities.</p>
                 
                 <ul class="features-list">
-                    <li><strong>Total Convection:</strong> Powers advanced cooking modes like Air Fry, No Preheat, Slow Cook, Convection Bake, and Steam Roast for professional results.</li>
-                    <li><strong>Dual Oven Capacity:</strong> Two independent 30-inch ovens provide massive space to cook multiple courses at different temperatures at once.</li>
-                    <li><strong>No Preheat Technology:</strong> Start baking immediately with a system that eliminates the need to wait for the oven to heat up for single-rack cooking.</li>
-                    <li><strong>Smudge-Proof® Stainless Steel:</strong> A high-grade finish that resists fingerprints and cleans easily with a dry cloth, keeping your kitchen looking spotless.</li>
-                    <li><strong>Integrated Air Fry:</strong> Achieve perfectly crispy results on both levels without the need for excess oil or bulky countertop appliances.</li>
-                    <li><strong>Self-Clean with Steam Option:</strong> Choose between a heavy-duty self-clean cycle or a quick 30-minute steam clean for light everyday maintenance.</li>
+                    <li><strong>Total Convection:</strong> Air Fry, Slow Cook, and Steam Roast capabilities.</li>
+                    <li><strong>Dual Capacity:</strong> Two independent ovens for massive cooking space.</li>
+                    <li><strong>No Preheat:</strong> Start baking immediately on single racks.</li>
+                    <li><strong>Smudge-Proof®:</strong> High-grade stainless steel that resists fingerprints.</li>
+                    <li><strong>Self-Clean:</strong> Heavy-duty or 30-minute steam options.</li>
                 </ul>
             </div>
         </div>
@@ -293,8 +328,9 @@
 </div>
 
 <script>
-    function updateThumbnails(activeImg) {
-        const thumbnails = document.querySelectorAll('.thumbnail-container img');
+    function updateFeatured(activeImg) {
+        document.getElementById('featured').src = activeImg.src;
+        const thumbnails = document.querySelectorAll('.thumbnail-strip img');
         thumbnails.forEach(img => img.classList.remove('active'));
         activeImg.classList.add('active');
     }

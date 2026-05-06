@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LG ThinQ Turbo360 | Five Star Liquidation</title>
+    <title>Frigidaire Professional 36" | Five Star Liquidation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
@@ -15,39 +15,6 @@
             --red: #e74c3c;
             --gray: #f4f4f4;
         }
-
-        .reserve-button {
-    display: block;
-    width: 100%;
-    max-width: 350px;
-    background: #000000; /* Black background */
-    color: #d4af37; /* Gold text */
-    text-align: center;
-    padding: 18px;
-    text-decoration: none;
-    font-weight: 900;
-    border-radius: 5px;
-    margin-top: 25px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
-    font-size: 1.1rem;
-    border: 2px solid #000000;
-}
-
-.reserve-button:hover {
-    background: #d4af37; /* Gold background on hover */
-    color: #000000; /* Black text on hover */
-    border-color: #d4af37;
-}
-
-.disclaimer-text {
-    font-size: 0.75rem;
-    color: #888;
-    margin-top: 15px;
-    line-height: 1.4;
-    max-width: 350px;
-}
 
         body {
             margin: 0; padding: 0;
@@ -62,6 +29,11 @@
             padding: 15px 10px;
             text-align: center;
             border-bottom: 4px solid var(--gold);
+        }
+
+        .logo-link {
+            display: inline-block;
+            text-decoration: none;
         }
 
         .main-logo {
@@ -85,6 +57,12 @@
             border-radius: 50px;
             font-size: 0.65rem;
             font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .badge:hover {
+            border-color: var(--gold);
+            color: var(--gold);
         }
 
         /* --- NAV BAR --- */
@@ -109,7 +87,7 @@
             text-transform: uppercase;
         }
 
-        /* --- PRODUCT SECTION LAYOUT --- */
+        /* --- PRODUCT SECTION --- */
         .product-container {
             max-width: 1200px;
             margin: 20px auto;
@@ -118,22 +96,27 @@
 
         .back-nav {
             margin-bottom: 20px;
-            justify-content: flex-start;
-            border: none;
+            text-align: left;
+        }
+
+        .back-nav a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 700;
+            font-size: 0.8rem;
         }
 
         .product-details-wrapper {
             display: flex;
-            flex-direction: column; /* عمودي للموبايل */
+            flex-direction: column;
             gap: 40px;
-            align-items: flex-start;
         }
 
         /* --- IMAGE GALLERY --- */
         .image-gallery {
             width: 100%;
             flex: 1;
-            max-width: 550px; /* تحديد عرض الصور */
+            max-width: 550px;
             margin: 0 auto;
         }
 
@@ -152,7 +135,7 @@
         .main-product-image img {
             width: 100%;
             max-height: 450px;
-            object-fit: contain; /* للحفاظ على شكل الغسالة */
+            object-fit: contain;
             padding: 10px;
         }
 
@@ -160,6 +143,7 @@
             display: flex;
             gap: 10px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .thumbnail-container img {
@@ -199,10 +183,13 @@
 
         .price-details {
             margin: 20px 0;
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
         }
 
         .current-price {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 900;
             color: var(--red);
         }
@@ -210,13 +197,46 @@
         .old-price {
             text-decoration: line-through;
             color: #888;
-            margin-left: 10px;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
+        }
+
+        .reserve-button {
+            display: block;
+            width: 100%;
+            max-width: 350px;
+            background: var(--black);
+            color: var(--gold);
+            text-align: center;
+            padding: 18px;
+            text-decoration: none;
+            font-weight: 900;
+            border-radius: 5px;
+            margin-top: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            font-size: 1.1rem;
+            border: 2px solid var(--black);
+        }
+
+        .reserve-button:hover {
+            background: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+        }
+
+        .disclaimer-text {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 15px;
+            line-height: 1.4;
+            max-width: 350px;
         }
 
         .features-list {
             padding-left: 20px;
-            margin-top: 20px;
+            margin-top: 30px;
+            line-height: 1.6;
         }
 
         .features-list li {
@@ -227,7 +247,7 @@
         /* --- DESKTOP ADJUSTMENTS --- */
         @media (min-width: 900px) {
             .product-details-wrapper {
-                flex-direction: row; /* الصور جنب النصوص */
+                flex-direction: row;
                 align-items: flex-start;
             }
             
@@ -274,53 +294,52 @@
 </nav>
 
 <div class="product-container">
-    <nav class="back-nav">
-        <a href="stoves-archive.html">← Back to Stoves & Ovens</a>
-    </nav>
+    <div class="back-nav">
+        <a href="fridges-archive.html">← Back to Refrigerators</a>
+    </div>
     
     <div class="product-details-wrapper">
         <div class="image-gallery">
             <div class="main-product-image">
-                <img id="featured" src="IMG_2582.PNG" alt="Frigidaire Gallery VortexChef Main View">
+                <img id="featured" src="IMG_29488.png" alt="Frigidaire Professional Refrigerator Main View">
             </div>
 
             <div class="thumbnail-container">
-                <img src="IMG_2582.PNG" class="active" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2428.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2430.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                 <img src="IMG_2020.png" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-     <img src="IMG_2021.png" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-          <img src="IMG_2433.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+                <img src="IMG_29488.png" class="active" onclick="updateMainImage(this)">
+                <img src="IMG_2948.jpeg" onclick="updateMainImage(this)">
+                <img src="IMG_2949.jpeg" onclick="updateMainImage(this)">
+                <img src="IMG_2950.jpeg" onclick="updateMainImage(this)">
+                <img src="IMG_2951.jpeg" onclick="updateMainImage(this)">
+                <img src="IMG_2952.jpeg" onclick="updateMainImage(this)">
             </div>
         </div>
 
         <div class="product-info-section">
-            <span class="category">Premium Smart Induction Range</span>
-            <h1>Frigidaire Gallery VortexChef™ 30: Smart Induction Range with Total Convection & Air Fry</h1>
+            <span class="category">Professional French Door Refrigerator</span>
+            <h1>Samsung 36-Inch 31 Cu. Ft. French Door Refrigerator – Stainless Steel with 4 Ice Types & Mega Capacity</h1>
             
             <div class="price-details">
-                <span class="current-price">$1,600</span>
-                <span class="old-price">$2,299</span>
+                <span class="current-price">$1,700</span>
+                <span class="old-price">$3,200</span>
             </div>
 
             <!-- Call to Reserve Button -->
-<a href="tel:4706365237" class="reserve-button">
-    <i class="fas fa-phone-alt"></i> Call to Reserve
-</a>
+            <a href="tel:4706365237" class="reserve-button">
+                <i class="fas fa-phone-alt"></i> Call to Reserve
+            </a>
 
-<!-- "As Is" Disclaimer Sentence -->
-<p class="disclaimer-text">*Product sold "As Is" for liquidation pricing. Prices subject to change. Local pickup required in Lawrenceville, GA.</p>
+            <!-- Added the "As Is" Disclaimer here -->
+            <p class="disclaimer-text">*Product sold "As Is" for liquidation pricing. Prices subject to change. Local pickup required in Lawrenceville, GA.</p>
 
             <div class="product-description">
-                <p>Master every meal with the <strong>Frigidaire Gallery VortexChef™</strong>. This 30-inch smart induction range combines the lightning-fast speed of induction cooking with the versatility of Total Convection. Whether you're air frying crispy wings or baking delicate pastries, this range delivers professional-grade results every time.</p>
+                <p style="margin-top: 25px;">Maximize your kitchen's potential with this high-capacity <strong>Samsung French Door Refrigerator</strong>. Featuring an expansive 31 cu. ft. interior and a sophisticated stainless steel finish, it is designed to handle the needs of any large household.</p>
                 
                 <ul class="features-list">
-                    <li><strong>Total Convection:</strong> Powers several cooking modes including Air Fry, No Preheat, Slow Cook, Convection Bake, Steam Bake, and more for maximum versatility.</li>
-                    <li><strong>Amazingly Fast Induction:</strong> Experience the quickest heat-up times and precise temperature control that only induction can provide, boiling water faster than gas or electric.</li>
-                    <li><strong>Integrated Air Fry:</strong> Deliver all of the flavor and none of the guilt. High-speed convection allows you to achieve perfectly crispy results with little to no oil.</li>
-                    <li><strong>Smudge-Proof® Stainless Steel:</strong> A high-quality finish that resists fingerprints and makes cleanup a breeze with just a dry cloth.</li>
-                    <li><strong>Steam Clean & Self Clean:</strong> Choose a 30-minute light steam clean or a heavy-duty self-cleaning cycle depending on your oven's needs.</li>
-                    <li><strong>Smart Kitchen Features:</strong> Connect via Wi-Fi to monitor your oven, set timers, and change temperatures remotely through your smart device.</li>
+                    <li><strong>4 Types of Ice:</strong> Always have the right ice on hand with cubed, crushed, ice bites, and craft ice options.</li>
+                    <li><strong>Mega Capacity:</strong> Massive 31 cu. ft. storage means fewer trips to the grocery store.</li>
+                    <li><strong>SpaceWise® Organization:</strong> Adjustable shelving and bins to fit items of all sizes.</li>
+                    <li><strong>TwinTech™ Dual Cooling:</strong> Independent cooling systems for the fridge and freezer to keep food fresher longer.</li>
+                    <li><strong>Smudge-Proof® Finish:</strong> Keeps your appliance looking clean with minimal effort.</li>
                 </ul>
             </div>
         </div>
@@ -328,7 +347,8 @@
 </div>
 
 <script>
-    function updateThumbnails(activeImg) {
+    function updateMainImage(activeImg) {
+        document.getElementById('featured').src = activeImg.src;
         const thumbnails = document.querySelectorAll('.thumbnail-container img');
         thumbnails.forEach(img => img.classList.remove('active'));
         activeImg.classList.add('active');

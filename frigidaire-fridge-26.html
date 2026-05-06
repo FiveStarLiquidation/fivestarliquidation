@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frigidaire Gallery 36-Inch 4-Door French Door Refrigerator | Five Star Liquidation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --black: #000000;
+            --gold: #f1e05a; 
+            --white: #ffffff;
+            --price-red: #ff7e67;
+        }
+
+        body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: var(--white); }
+
+        /* Header matching image_94ded1.jpg */
+        header {
+            background-color: var(--black);
+            padding: 15px 0 15px 0;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .main-logo { max-width: 220px; height: auto; display: block; margin: 0 auto 15px auto; }
+
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .contact-item {
+            text-decoration: none;
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .contact-item i { color: white; transition: color 0.3s; }
+        .contact-item:hover i { color: var(--gold); }
+
+        /* Navigation Links */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+            background: white;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: 900;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover { color: var(--gold); }
+
+        /* Back Navigation */
+        .back-nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 10px 20px 30px 20px;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #bbb;
+            font-weight: 700;
+            font-size: 0.75rem;
+            transition: color 0.3s;
+        }
+        .back-link:hover { color: black; }
+
+        /* Product Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .image-side { text-align: center; }
+        .main-img img { width: 100%; max-width: 450px; height: auto; }
+        
+        .thumb-row { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+        .thumb-row img { 
+            width: 55px; height: 55px; 
+            border: 1px solid #eee; 
+            cursor: pointer; 
+            padding: 2px;
+            transition: 0.3s;
+        }
+        .thumb-row img.active { border-color: var(--gold); border-width: 2px; }
+
+        /* Product Info */
+        .brand-sub { color: var(--gold); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 10px; }
+        .title { font-size: 2rem; font-weight: 900; color: #333; line-height: 1.1; margin: 0 0 15px 0; }
+        .price { font-size: 3rem; font-weight: 900; color: var(--price-red); margin-bottom: 5px; }
+        .old-price { color: #eee; text-decoration: line-through; font-size: 1.6rem; margin-left: 10px; font-weight: 400; }
+
+        /* Match CSS from User */
+        .reserve-button {
+            display: block;
+            width: 100%;
+            max-width: 350px;
+            background: #000000;
+            color: #d4af37; /* Gold text */
+            text-align: center;
+            padding: 18px;
+            text-decoration: none;
+            font-weight: 900;
+            border-radius: 5px;
+            margin-top: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            font-size: 1.1rem;
+            border: 2px solid #000000;
+        }
+
+        .reserve-button:hover {
+            background: #d4af37; /* Gold background on hover */
+            color: #000000; /* Black text on hover */
+            border-color: #d4af37;
+        }
+
+        .disclaimer-text {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 15px;
+            line-height: 1.4;
+            max-width: 350px;
+        }
+
+        .product-description { font-size: 0.9rem; color: #555; line-height: 1.6; }
+        
+        .features-list { list-style: none; padding: 0; margin-top: 20px; }
+        .features-list li { margin-bottom: 12px; position: relative; padding-left: 25px; }
+        .features-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #eee;
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+            .contact-bar { flex-direction: column; align-items: center; }
+            .reserve-button { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html">
+        <img src="IMG_0000.jpg" alt="5 Star Liquidation" class="main-logo">
+    </a>
+    <div class="contact-bar">
+        <a href="https://maps.google.com/?q=2429+Lawrenceville+Hwy+GA" target="_blank" class="contact-item">
+            <i class="fas fa-map-marker-alt"></i> 2429 Lawrenceville Hwy, GA
+        </a>
+        <a href="tel:4706365237" class="contact-item">
+            <i class="fas fa-phone-alt"></i> (470) 636-5237
+        </a>
+    </div>
+</header>
+
+<nav>
+    <a href="washers-archive.html">Washers</a>
+    <a href="dryers-archive.html">Dryers</a>
+    <a href="fridges-archive.html">Refrigerators</a>
+    <a href="stoves-archive.html">Stoves</a>
+    <a href="microwaves-archive.html">Microwaves</a>
+    <a href="freezers-archive.html">Freezers</a>
+</nav>
+
+<div class="back-nav">
+    <a href="fridges-archive.html" class="back-link">← Back to Refrigerators</a>
+</div>
+
+<div class="container">
+    <div class="image-side">
+        <div class="main-img"><img id="featured" src="IMG_29599.png"></div>
+        <div class="thumb-row">
+            <img src="IMG_29599.png" class="active" onclick="updateMainImage(this)">
+            <img src="IMG_2959.jpeg" onclick="updateMainImage(this)">
+            <img src="IMG_2960.jpeg" onclick="updateMainImage(this)">
+            <img src="IMG_2961.jpeg" onclick="updateMainImage(this)">
+            <img src="IMG_2962.jpeg" onclick="updateMainImage(this)">
+            <img src="IMG_2963.jpeg" onclick="updateMainImage(this)">
+            <img src="IMG_2964.jpeg" onclick="updateMainImage(this)">
+            <img src="IMG_2965.jpeg" onclick="updateMainImage(this)">
+        </div>
+    </div>
+
+    <div class="info-side">
+        <div class="brand-sub">Frigidaire Professional</div>
+        <h1 class="title">Frigidaire Gallery 36-Inch 4-Door French Door Refrigerator – 26.3 Cu. Ft.</h1>
+        <div class="price">$1,700 <span class="old-price">$3,200</span></div>
+
+        <a href="tel:4706365237" class="reserve-button">Call to Reserve</a>
+
+        <p class="disclaimer-text">*Product sold "As Is" for liquidation pricing. Prices subject to change. Local pickup required in Lawrenceville, GA.</p>
+
+        <div class="product-description">
+            <p style="margin-top: 25px;">The Frigidaire Gallery 4-Door Refrigerator is built for organization and style. Featuring the Custom-Flex Temp Drawer, you can switch from fridge to freezer temperatures with ease.</p>
+
+            <ul class="features-list">
+                <li><strong>26.3 Cu. Ft. Total Capacity:</strong> Massive storage means fewer trips to the grocery store.</li>
+                <li><strong>Smudge-Proof® Stainless Steel:</strong> Keeps your appliance looking clean with minimal effort.</li>
+                <li><strong>Custom-Flex® Temp Drawer:</strong> Adjustable temperature to fit items of all sizes.</li>
+                <li><strong>SpaceWise® Organization:</strong> Independent cooling systems for the fridge and freezer to keep food fresher longer.</li>
+                <li><strong>PureSource Ultra® II:</strong> Advanced Water Filtration for clean, fresh ice and water.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updateMainImage(activeImg) {
+        document.getElementById('featured').src = activeImg.src;
+        const thumbnails = document.querySelectorAll('.thumb-row img');
+        thumbnails.forEach(img => img.classList.remove('active'));
+        activeImg.classList.add('active');
+    }
+</script>
+
+<footer>
+    <p>© 2026 Five Star Liquidation - Premium Outlet Deals</p>
+</footer>
+
+</body>
+</html>
