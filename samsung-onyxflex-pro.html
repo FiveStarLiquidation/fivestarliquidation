@@ -21,6 +21,7 @@
             font-family: 'Montserrat', sans-serif;
             background-color: var(--white);
             color: #333;
+            overflow-x: hidden; /* Prevents side-scrolling bugs on mobile */
         }
 
         /* --- HEADER --- */
@@ -42,6 +43,7 @@
             justify-content: center;
             gap: 10px;
             margin-top: 10px;
+            flex-wrap: wrap;
         }
 
         .badge {
@@ -90,7 +92,7 @@
             align-items: flex-start;
         }
 
-        /* --- COMPACT SCROLLING GALLERY --- */
+        /* --- GALLERY LAYOUT --- */
         .gallery-container {
             display: flex;
             gap: 15px;
@@ -101,20 +103,16 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            max-height: 550px; /* Controls height on desktop */
+            max-height: 550px;
             overflow-y: auto;
             width: 90px;
             padding-right: 5px;
+            flex-shrink: 0;
         }
 
-        /* Custom Scrollbar for side gallery */
-        .thumbnail-sidebar::-webkit-scrollbar {
-            width: 5px;
-        }
-        .thumbnail-sidebar::-webkit-scrollbar-thumb {
-            background: var(--gold);
-            border-radius: 10px;
-        }
+        /* Custom Scrollbar */
+        .thumbnail-sidebar::-webkit-scrollbar { width: 5px; }
+        .thumbnail-sidebar::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
 
         .thumbnail-sidebar img {
             width: 75px;
@@ -127,9 +125,7 @@
             flex-shrink: 0;
         }
 
-        .thumbnail-sidebar img.active {
-            border-color: var(--gold);
-        }
+        .thumbnail-sidebar img.active { border-color: var(--gold); }
 
         .main-display {
             flex-grow: 1;
@@ -197,16 +193,12 @@
             transition: 0.3s;
         }
 
-        .reserve-button:hover {
-            background: var(--gold);
-            color: var(--black);
-        }
+        .reserve-button:hover { background: var(--gold); color: var(--black); }
 
         .disclaimer-text {
             font-size: 0.75rem;
             color: #888;
             line-height: 1.4;
-            max-width: 380px;
         }
 
         .features-list {
@@ -228,23 +220,48 @@
             font-weight: bold;
         }
 
-        /* --- MOBILE OPTIMIZATION --- */
+        /* --- MOBILE FIXES (Solves image.png issues) --- */
         @media (max-width: 900px) {
+            .product-container {
+                padding: 0 15px;
+                margin: 10px auto;
+            }
+
             .product-details-wrapper {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; /* Stacks image on top */
+                gap: 20px;
             }
+
             .gallery-container {
-                flex-direction: column-reverse;
+                flex-direction: column; /* Moves main image to top */
             }
+
+            .main-display {
+                height: 350px; /* Prevents image from being too small */
+                width: 100%;
+            }
+
             .thumbnail-sidebar {
-                flex-direction: row;
+                flex-direction: row; /* Horizontal swipe row */
                 width: 100%;
                 overflow-x: auto;
                 max-height: none;
-                padding-bottom: 10px;
+                padding: 10px 0;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
             }
-            .main-display {
-                height: 400px;
+
+            .thumbnail-sidebar::-webkit-scrollbar { display: none; }
+
+            .thumbnail-sidebar img {
+                width: 85px; /* Bigger touch targets */
+                height: 85px;
+            }
+
+            h1 { font-size: 1.4rem; }
+
+            .reserve-button {
+                max-width: 100%; /* Full screen width button */
             }
         }
 
@@ -288,7 +305,7 @@
         
         <!-- SIDEBAR GALLERY LAYOUT -->
         <div class="gallery-container">
-            <div class="thumbnail-sidebar">
+            <div class="thumbnail-sidebar" id="thumbBox">
                 <img src="IMG_2573.PNG" class="active" onclick="updateView(this)">
                 <img src="IMG_2358.JPEG" onclick="updateView(this)">
                 <img src="IMG_2359.JPEG" onclick="updateView(this)">
