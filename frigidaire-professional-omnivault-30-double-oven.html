@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frigidaire Professional OmniVault | Five Star Liquidation</title>
+    <title>LG ThinQ Turbo360 | Five Star Liquidation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
@@ -23,7 +23,7 @@
             color: #333;
         }
 
-        /* --- HEADER --- */
+        /* --- HEADER & NAV --- */
         header {
             background-color: var(--black);
             padding: 15px 10px;
@@ -31,11 +31,7 @@
             border-bottom: 4px solid var(--gold);
         }
 
-        .main-logo {
-            width: 100%;
-            max-width: 280px;
-            height: auto;
-        }
+        .main-logo { width: 100%; max-width: 280px; height: auto; }
 
         .info-bar {
             display: flex;
@@ -54,7 +50,6 @@
             font-weight: 700;
         }
 
-        /* --- NAV BAR --- */
         nav {
             background: white;
             padding: 12px 0;
@@ -76,80 +71,80 @@
             text-transform: uppercase;
         }
 
-        /* --- PRODUCT LAYOUT --- */
+        /* --- LAYOUT --- */
         .product-container {
             max-width: 1200px;
             margin: 20px auto;
             padding: 0 20px;
         }
 
+        .back-nav { margin-bottom: 20px; border: none; }
+
         .product-details-wrapper {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 40px;
             align-items: flex-start;
         }
 
-        /* --- IMPROVED IMAGE GALLERY --- */
-        .gallery-layout {
+        /* --- IMAGE GALLERY (Thumbnails now correctly underneath) --- */
+        .image-gallery {
+            width: 100%;
+            flex: 1;
+            max-width: 550px;
+            margin: 0 auto;
             display: flex;
-            gap: 15px;
+            flex-direction: column; /* This stacks main image on top of thumbnails */
         }
 
-        /* Vertical Thumbnail Strip */
-        .thumbnail-strip {
+        .main-product-image {
+            width: 100%;
+            background: var(--gray);
+            border-radius: 15px;
+            overflow: hidden;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-height: 500px;
-            overflow-y: auto;
-            padding-right: 5px;
-            width: 80px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
         }
 
-        /* Custom Scrollbar for Thumbnails */
-        .thumbnail-strip::-webkit-scrollbar {
-            width: 4px;
-        }
-        .thumbnail-strip::-webkit-scrollbar-thumb {
-            background: var(--gold);
-            border-radius: 10px;
+        .main-product-image img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+            padding: 10px;
         }
 
-        .thumbnail-strip img {
-            width: 70px;
-            height: 70px;
-            object-fit: cover;
+        /* --- THUMBNAIL GRID (5 PER ROW) --- */
+        .thumbnail-container {
+            display: flex !important;
+            flex-direction: row !important; /* Forces them horizontal */
+            flex-wrap: wrap !important;
+            gap: 8px; 
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .thumbnail-container img {
+            /* (100% width - 32px total for 4 gaps of 8px) / 5 images */
+            width: calc((100% - 32px) / 5) !important; 
+            aspect-ratio: 1 / 1 !important;
+            object-fit: cover !important;
             border: 2px solid #ddd;
             border-radius: 8px;
             cursor: pointer;
             transition: 0.3s;
-            flex-shrink: 0;
+            box-sizing: border-box !important;
         }
 
-        .thumbnail-strip img.active {
+        .thumbnail-container img.active {
             border-color: var(--gold);
         }
 
-        .main-stage {
-            flex-grow: 1;
-            background: var(--gray);
-            border-radius: 15px;
-            border: 1px solid #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 500px;
-            overflow: hidden;
-        }
+        /* --- PRODUCT INFO --- */
+        .product-info-section { flex: 1; width: 100%; }
 
-        .main-stage img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        /* --- INFO SECTION --- */
         .category {
             color: var(--gold);
             text-transform: uppercase;
@@ -158,103 +153,48 @@
             letter-spacing: 1px;
         }
 
-        h1 {
-            font-size: 1.8rem;
-            font-weight: 900;
-            margin: 10px 0;
-            line-height: 1.2;
-        }
+        h1 { font-size: 1.8rem; font-weight: 900; margin: 10px 0; line-height: 1.2; }
 
-        .price-details {
-            margin: 20px 0;
-        }
-
-        .current-price {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--red);
-        }
-
-        .old-price {
-            text-decoration: line-through;
-            color: #888;
-            margin-left: 10px;
-            font-size: 1.2rem;
-        }
+        .price-details { margin: 20px 0; }
+        .current-price { font-size: 2rem; font-weight: 900; color: var(--red); }
+        .old-price { text-decoration: line-through; color: #888; margin-left: 10px; font-size: 1.2rem; }
 
         .reserve-button {
             display: block;
             width: 100%;
-            background: var(--black);
-            color: var(--gold);
+            max-width: 350px;
+            background: #000000;
+            color: #d4af37;
             text-align: center;
             padding: 18px;
             text-decoration: none;
             font-weight: 900;
             border-radius: 5px;
-            margin: 25px 0;
+            margin-top: 25px;
             text-transform: uppercase;
             font-size: 1.1rem;
-            border: 2px solid var(--black);
-            transition: 0.3s;
+            border: 2px solid #000000;
         }
 
-        .reserve-button:hover {
-            background: var(--gold);
-            color: var(--black);
+        .reserve-button:hover { background: #d4af37; color: #000000; border-color: #d4af37; }
+
+        .disclaimer-text { font-size: 0.75rem; color: #888; margin-top: 15px; max-width: 350px; }
+
+        .features-list { padding-left: 20px; margin-top: 20px; }
+        .features-list li { margin-bottom: 10px; font-size: 0.95rem; }
+
+        @media (min-width: 900px) {
+            .product-details-wrapper { flex-direction: row; }
+            .image-gallery { position: sticky; top: 100px; }
         }
 
-        .features-list {
-            padding-left: 0;
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .features-list li {
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-            display: flex;
-            gap: 10px;
-        }
-
-        .features-list li::before {
-            content: "✓";
-            color: var(--gold);
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: var(--black);
-            color: white;
-            margin-top: 50px;
-            font-size: 0.8rem;
-        }
-
-        @media (max-width: 900px) {
-            .product-details-wrapper {
-                grid-template-columns: 1fr;
-            }
-            .gallery-layout {
-                flex-direction: column-reverse;
-            }
-            .thumbnail-strip {
-                flex-direction: row;
-                width: 100%;
-                overflow-x: auto;
-                max-height: none;
-            }
-            .main-stage {
-                height: 350px;
-            }
-        }
+        footer { text-align: center; padding: 30px; background: var(--black); color: white; margin-top: 50px; }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html">
+    <a href="index.html" class="logo-link">
         <img src="IMG_0000.jpg" alt="Five Star Liquidation" class="main-logo">
     </a>
     <div class="info-bar">
@@ -277,25 +217,25 @@
 </nav>
 
 <div class="product-container">
+    <nav class="back-nav">
+        <a href="stoves-archive.html">← Back to Stoves & Ovens</a>
+    </nav>
+    
     <div class="product-details-wrapper">
-        
-        <!-- ENHANCED GALLERY -->
-        <div class="gallery-layout">
-            <div class="thumbnail-strip">
-                <img src="IMG_5555.JPEG.png" class="active" onclick="updateFeatured(this)">
-                <img src="IMG_2405.JPEG" onclick="updateFeatured(this)">
-                <img src="IMG_2406.JPEG" onclick="updateFeatured(this)">
-                <img src="IMG_2407.JPEG" onclick="updateFeatured(this)">
-                <img src="IMG_2408.JPEG" onclick="updateFeatured(this)">
-                <img src="IMG_2409.JPEG" onclick="updateFeatured(this)">
-                <img src="IMG_2410.JPEG" onclick="updateFeatured(this)">
-                <img src="IMG_2411.JPEG" onclick="updateFeatured(this)">
-                <img src="IMG_2412.JPEG" onclick="updateFeatured(this)">
-                <img src="IMG_2413.JPEG" onclick="updateFeatured(this)">
-                <img src="IMG_2414.JPEG" onclick="updateFeatured(this)">
+        <!-- Main Gallery Container -->
+        <div class="image-gallery">
+            <!-- Big Image Container -->
+            <div class="main-product-image">
+                <img id="featured" src="IMG_2579.PNG" alt="Main View">
             </div>
-            <div class="main-stage">
-                <img id="featured" src="IMG_5555.JPEG.png" alt="Frigidaire Professional OmniVault">
+
+            <!-- Horizontal Grid Container -->
+            <div class="thumbnail-container">
+                <img src="IMG_2579.PNG" class="active" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+                <img src="IMG_2406.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+                <img src="IMG_2407.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+                <img src="IMG_2408.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+                <img src="IMG_2409.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
             </div>
         </div>
 
@@ -305,22 +245,21 @@
             
             <div class="price-details">
                 <span class="current-price">$1,900</span>
-                <span class="old-price">$3,999</span>
+                <span class="old-price">$3,099</span>
             </div>
 
             <a href="tel:4706365237" class="reserve-button">
                 <i class="fas fa-phone-alt"></i> Call to Reserve
             </a>
 
+            <p class="disclaimer-text">*Product sold "As Is" for liquidation pricing. Local pickup required in Lawrenceville, GA.</p>
+
             <div class="product-description">
-                <p>Designed for professional-grade culinary performance, featuring Total Convection in both cavities.</p>
-                
                 <ul class="features-list">
                     <li><strong>Total Convection:</strong> Air Fry, Slow Cook, and Steam Roast capabilities.</li>
                     <li><strong>Dual Capacity:</strong> Two independent ovens for massive cooking space.</li>
                     <li><strong>No Preheat:</strong> Start baking immediately on single racks.</li>
                     <li><strong>Smudge-Proof®:</strong> High-grade stainless steel that resists fingerprints.</li>
-                    <li><strong>Self-Clean:</strong> Heavy-duty or 30-minute steam options.</li>
                 </ul>
             </div>
         </div>
@@ -328,9 +267,8 @@
 </div>
 
 <script>
-    function updateFeatured(activeImg) {
-        document.getElementById('featured').src = activeImg.src;
-        const thumbnails = document.querySelectorAll('.thumbnail-strip img');
+    function updateThumbnails(activeImg) {
+        const thumbnails = document.querySelectorAll('.thumbnail-container img');
         thumbnails.forEach(img => img.classList.remove('active'));
         activeImg.classList.add('active');
     }
