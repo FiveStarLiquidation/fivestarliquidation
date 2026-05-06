@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LG ThinQ Turbo360 | Five Star Liquidation</title>
+    <title>Samsung HorizonSync™ 2.1 | Five Star Liquidation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
@@ -76,151 +76,187 @@
             text-transform: uppercase;
         }
 
-        /* --- PRODUCT SECTION LAYOUT --- */
-        .product-container {
-            max-width: 1200px;
+        /* --- PRODUCT SECTION --- */
+        .container {
+            max-width: 1100px;
             margin: 20px auto;
             padding: 0 20px;
         }
 
         .back-nav {
             margin-bottom: 20px;
-            justify-content: flex-start;
-            border: none;
         }
 
-        .product-details-wrapper {
-            display: flex;
-            flex-direction: column; /* عمودي للموبايل */
+        .back-nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .product-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
             align-items: flex-start;
         }
 
         /* --- IMAGE GALLERY --- */
         .image-gallery {
-            width: 100%;
-            flex: 1;
-            max-width: 550px; /* تحديد عرض الصور */
-            margin: 0 auto;
-        }
-
-        .main-product-image {
-            width: 100%;
-            background: var(--gray);
-            border-radius: 15px;
-            overflow: hidden;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ddd;
-            margin-bottom: 15px;
+            flex-direction: column;
+            gap: 20px;
         }
 
-        .main-product-image img {
+        .main-image {
             width: 100%;
-            max-height: 450px;
-            object-fit: contain; /* للحفاظ على شكل الغسالة */
-            padding: 10px;
+            border-radius: 16px;
+            border: 1px solid #eee;
+            overflow: hidden;
+            background: #fff;
         }
 
-        .thumbnail-container {
+        .main-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* FIXED: THUMBNAILS NEXT TO EACH OTHER */
+        .thumbnail-list {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
             justify-content: center;
         }
 
-        .thumbnail-container img {
+        .thumbnail-list img {
             width: 70px;
             height: 70px;
             object-fit: cover;
-            border: 2px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
-            transition: 0.3s;
+            border: 1px solid #eee;
+            transition: 0.2s;
         }
 
-        .thumbnail-container img.active {
+        .thumbnail-list img:hover {
             border-color: var(--gold);
         }
 
-        /* --- PRODUCT INFO --- */
-        .product-info-section {
-            flex: 1;
-            width: 100%;
+        /* --- INFO SECTION --- */
+        .product-info h1 {
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+            color: #1a1a1a;
+            line-height: 1.3;
+            font-weight: 900;
         }
 
         .category {
             color: var(--gold);
-            text-transform: uppercase;
-            font-weight: 900;
+            font-weight: 700;
             font-size: 0.8rem;
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        h1 {
-            font-size: 1.8rem;
-            font-weight: 900;
-            margin: 10px 0;
-            line-height: 1.2;
-        }
-
-        .price-details {
+        .price-section {
             margin: 20px 0;
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
         }
 
         .current-price {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 900;
             color: var(--red);
         }
 
         .old-price {
+            font-size: 1.3rem;
+            color: #bbb;
             text-decoration: line-through;
+        }
+
+        /* RESERVE BUTTON */
+        .reserve-button {
+            display: block;
+            width: 100%;
+            max-width: 350px;
+            background: #000000;
+            color: #d4af37;
+            text-align: center;
+            padding: 18px;
+            text-decoration: none;
+            font-weight: 900;
+            border-radius: 5px;
+            margin-top: 25px;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            border: 2px solid #000000;
+            transition: 0.3s;
+        }
+
+        .reserve-button:hover {
+            background: #d4af37;
+            color: #000;
+        }
+
+        .disclaimer-text {
+            font-size: 0.75rem;
             color: #888;
-            margin-left: 10px;
-            font-size: 1.2rem;
+            margin-top: 15px;
+            line-height: 1.4;
+        }
+
+        .description {
+            line-height: 1.8;
+            color: #666;
+            font-size: 1rem;
+            border-top: 1px solid #eee;
+            margin-top: 25px;
+            padding-top: 20px;
         }
 
         .features-list {
-            padding-left: 20px;
-            margin-top: 20px;
+            padding-left: 0;
+            list-style: none;
+            margin-top: 15px;
         }
 
         .features-list li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            display: flex;
+            gap: 10px;
             font-size: 0.95rem;
         }
 
-        /* --- DESKTOP ADJUSTMENTS --- */
-        @media (min-width: 900px) {
-            .product-details-wrapper {
-                flex-direction: row; /* الصور جنب النصوص */
-                align-items: flex-start;
-            }
-            
-            .image-gallery {
-                position: sticky;
-                top: 100px;
-            }
+        .features-list li::before {
+            content: "✓";
+            color: var(--gold);
+            font-weight: bold;
         }
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: var(--black);
-            color: white;
-            margin-top: 50px;
-            font-size: 0.8rem;
+        @media (max-width: 850px) {
+            .product-wrapper {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html" class="logo-link">
+    <a href="index.html">
         <img src="IMG_0000.jpg" alt="Five Star Liquidation" class="main-logo">
     </a>
-
     <div class="info-bar">
         <a href="https://maps.google.com" target="_blank" class="badge">
             <i class="fas fa-map-marker-alt"></i> 2429 Lawrenceville Hwy, GA
@@ -239,100 +275,6 @@
     <a href="microwaves-archive.html">Microwaves</a>
     <a href="freezers-archive.html">Freezers</a>
 </nav>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samsung HorizonSync™ 2.1 - Details</title>
-    <style>
-        body { 
-            font-family: 'Montserrat', sans-serif; 
-            background-color: #f8f9fa; 
-            margin: 0; 
-            padding: 40px 20px; 
-            color: #333; 
-        }
-
-        .container { 
-            max-width: 900px; 
-            margin: 0 auto; 
-        }
-
-        .back-nav { margin-bottom: 15px; }
-        .back-nav a { text-decoration: none; color: #666; font-size: 0.9rem; font-weight: 600; }
-        
-        .product-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px; 
-            background: #fff;
-            padding: 30px; 
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            align-items: center;
-        }
-
-        .image-gallery {
-            width: 100%;
-            max-width: 350px;
-            margin: 0 auto;
-        }
-
-        .main-image { 
-            width: 100%; 
-            border-radius: 12px; 
-            border: 1px solid #f0f0f0;
-            overflow: hidden; 
-        }
-
-        .main-image img { 
-            width: 100%; 
-            height: auto; 
-            display: block; 
-            object-fit: contain;
-        }
-
-        .thumbnail-list { display: flex; gap: 10px; margin-top: 15px; justify-content: center; }
-        .thumbnail-list img { width: 60px; height: 60px; border-radius: 8px; cursor: pointer; border: 1px solid #eee; }
-
-        .product-info h1 { font-size: 1.5rem; margin: 0 0 10px 0; color: #1a1a1a; line-height: 1.2; }
-        .category { color: #d4af37; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
-        
-        .price-section { margin: 15px 0; display: flex; align-items: baseline; gap: 10px; }
-        .current-price { font-size: 1.8rem; font-weight: 800; color: #222; }
-        .old-price { font-size: 1.1rem; color: #bbb; text-decoration: line-through; }
-        
-        .description { font-size: 0.95rem; line-height: 1.6; color: #666; border-top: 1px solid #f0f0f0; padding-top: 15px; }
-        
-        .features-list {
-            margin-top: 20px;
-            padding: 0;
-            list-style: none;
-        }
-
-        .features-list li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            font-size: 0.9rem;
-            color: #444;
-        }
-
-        .features-list li::before {
-            content: "✓";
-            color: #d4af37;
-            font-weight: bold;
-        }
-
-        @media (max-width: 768px) { 
-            .product-wrapper { grid-template-columns: 1fr; padding: 20px; } 
-            .image-gallery { max-width: 100%; }
-        }
-    </style>
-</head>
-<body>
 
 <div class="container">
     <nav class="back-nav">
@@ -342,18 +284,14 @@
     <div class="product-wrapper">
         <div class="image-gallery">
             <div class="main-image">
-                <img id="featured" src="IMG_2597.PNG" alt="Samsung HorizonSync View">
+                <img id="featured" src="IMG_2597.PNG" alt="Samsung HorizonSync 2.1">
             </div>
+            
+            <!-- FIXED: THUMBNAILS IN ONE ROW -->
             <div class="thumbnail-list">
                 <img src="IMG_2597.PNG" onclick="document.getElementById('featured').src=this.src">
-            </div>
-             <div class="thumbnail-list">
                 <img src="IMG_2561.JPEG" onclick="document.getElementById('featured').src=this.src">
-            </div>
-             <div class="thumbnail-list">
                 <img src="IMG_2562.JPEG" onclick="document.getElementById('featured').src=this.src">
-            </div>
-             <div class="thumbnail-list">
                 <img src="IMG_2563.JPEG" onclick="document.getElementById('featured').src=this.src">
             </div>
         </div>
@@ -367,16 +305,21 @@
                 <span class="old-price">$579</span>
             </div>
 
+            <!-- ADDED: CALL TO RESERVE -->
+            <a href="tel:4706365237" class="reserve-button">
+                <i class="fas fa-phone-alt"></i> Call to Reserve
+            </a>
+            <p class="disclaimer-text">*Product sold "As Is" for liquidation pricing. Visit our shop in Lawrenceville for pickup.</p>
+
             <div class="description">
-                <p>Elevate your kitchen with the <strong>Samsung HorizonSync™ 2.1</strong>. This advanced over-the-range microwave features a stunning LCD control center and seamless smart integration, making meal prep more intuitive than ever.</p>
+                <p>Elevate your kitchen with the <strong>Samsung HorizonSync™ 2.1</strong>. This advanced microwave features a stunning LCD control center and seamless smart integration.</p>
                 
                 <ul class="features-list">
-                    <li><strong>LCD Control Center:</strong> Intuitively adjust settings with a sleek, full-color digital interface.</li>
-                    <li><strong>SmartThings Integration:</strong> Monitor and control your microwave remotely from your smartphone.</li>
-                    <li><strong>Precise Sensor Cooking:</strong> Automatically adjusts power and time based on food moisture.</li>
-                    <li><strong>Extra-Large Capacity:</strong> 2.1 cu. ft. space to accommodate oversized plates and dishes.</li>
-                    <li><strong>Powerful Ventilation:</strong> High-speed 400 CFM vent system removes steam and odors quickly.</li>
-                    <li><strong>Fingerprint Resistant Finish:</strong> Keeps your appliance looking spotless in busy kitchens.</li>
+                    <li><strong>LCD Control Center:</strong> Sleek, full-color digital interface.</li>
+                    <li><strong>SmartThings Integration:</strong> Monitor and control remotely via smartphone.</li>
+                    <li><strong>Sensor Cooking:</strong> Adjusts time based on food moisture levels.</li>
+                    <li><strong>Large Capacity:</strong> 2.1 cu. ft. for oversized dishes.</li>
+                    <li><strong>Fingerprint Resistant:</strong> Stay spotless even in busy kitchens.</li>
                 </ul>
             </div>
         </div>
