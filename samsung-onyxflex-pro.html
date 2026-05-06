@@ -21,7 +21,8 @@
             font-family: 'Montserrat', sans-serif;
             background-color: var(--white);
             color: #333;
-            overflow-x: hidden; /* Prevents side-scrolling bugs on mobile */
+            overflow-x: hidden;
+            width: 100%;
         }
 
         /* --- HEADER --- */
@@ -34,14 +35,14 @@
 
         .main-logo {
             width: 100%;
-            max-width: 280px;
+            max-width: 250px;
             height: auto;
         }
 
         .info-bar {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             margin-top: 10px;
             flex-wrap: wrap;
         }
@@ -49,20 +50,20 @@
         .badge {
             color: var(--white);
             text-decoration: none;
-            padding: 5px 12px;
+            padding: 5px 10px;
             border: 1px solid rgba(255,255,255,0.3);
             border-radius: 50px;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 700;
         }
 
         /* --- NAV BAR --- */
         nav {
             background: white;
-            padding: 12px 0;
+            padding: 10px 0;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             border-bottom: 1px solid #eee;
             flex-wrap: wrap;
             position: sticky;
@@ -74,21 +75,22 @@
             text-decoration: none;
             color: black;
             font-weight: 800;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
         }
 
         /* --- PRODUCT LAYOUT --- */
         .product-container {
             max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
+            margin: 10px auto;
+            padding: 0 15px;
+            box-sizing: border-box;
         }
 
         .product-details-wrapper {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
-            gap: 40px;
+            gap: 30px;
             align-items: flex-start;
         }
 
@@ -105,24 +107,18 @@
             gap: 10px;
             max-height: 550px;
             overflow-y: auto;
-            width: 90px;
-            padding-right: 5px;
+            width: 80px;
             flex-shrink: 0;
         }
 
-        /* Custom Scrollbar */
-        .thumbnail-sidebar::-webkit-scrollbar { width: 5px; }
-        .thumbnail-sidebar::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
-
         .thumbnail-sidebar img {
-            width: 75px;
-            height: 75px;
+            width: 70px;
+            height: 70px;
             object-fit: cover;
             border: 2px solid #ddd;
             border-radius: 8px;
             cursor: pointer;
             transition: 0.3s;
-            flex-shrink: 0;
         }
 
         .thumbnail-sidebar img.active { border-color: var(--gold); }
@@ -130,12 +126,12 @@
         .main-display {
             flex-grow: 1;
             background: var(--gray);
-            border-radius: 15px;
+            border-radius: 12px;
             border: 1px solid #ddd;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 550px;
+            height: 500px;
             overflow: hidden;
         }
 
@@ -143,7 +139,7 @@
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            padding: 20px;
+            padding: 10px;
         }
 
         /* --- PRODUCT INFO --- */
@@ -151,19 +147,19 @@
             color: var(--gold);
             text-transform: uppercase;
             font-weight: 900;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 1px;
         }
 
         h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 900;
             margin: 10px 0;
             line-height: 1.2;
         }
 
         .current-price {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 900;
             color: var(--red);
         }
@@ -171,32 +167,35 @@
         .old-price {
             text-decoration: line-through;
             color: #888;
-            margin-left: 10px;
-            font-size: 1.2rem;
+            margin-left: 8px;
+            font-size: 1.1rem;
         }
 
         .reserve-button {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             width: 100%;
-            max-width: 380px;
             background: var(--black);
             color: var(--gold);
             text-align: center;
-            padding: 18px;
+            padding: 16px;
             text-decoration: none;
             font-weight: 900;
             border-radius: 5px;
-            margin: 25px 0 10px 0;
+            margin: 20px 0 10px 0;
             text-transform: uppercase;
-            font-size: 1.1rem;
+            font-size: 1rem;
             border: 2px solid var(--black);
             transition: 0.3s;
+            box-sizing: border-box;
         }
 
         .reserve-button:hover { background: var(--gold); color: var(--black); }
 
         .disclaimer-text {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #888;
             line-height: 1.4;
         }
@@ -204,14 +203,14 @@
         .features-list {
             padding-left: 0;
             list-style: none;
-            margin-top: 30px;
+            margin-top: 25px;
         }
 
         .features-list li {
-            margin-bottom: 15px;
-            font-size: 1rem;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
             display: flex;
-            gap: 12px;
+            gap: 10px;
         }
 
         .features-list li::before {
@@ -220,58 +219,51 @@
             font-weight: bold;
         }
 
-        /* --- MOBILE FIXES (Solves image.png issues) --- */
-        @media (max-width: 900px) {
-            .product-container {
-                padding: 0 15px;
-                margin: 10px auto;
-            }
-
+        /* --- MOBILE RESPONSIVE FIXES --- */
+        @media (max-width: 850px) {
             .product-details-wrapper {
-                grid-template-columns: 1fr; /* Stacks image on top */
-                gap: 20px;
+                grid-template-columns: 1fr; /* Stack into single column */
+                gap: 15px;
             }
 
             .gallery-container {
-                flex-direction: column; /* Moves main image to top */
-            }
-
-            .main-display {
-                height: 350px; /* Prevents image from being too small */
-                width: 100%;
+                flex-direction: column-reverse; /* Put thumbnails below the main image or above */
+                gap: 10px;
             }
 
             .thumbnail-sidebar {
-                flex-direction: row; /* Horizontal swipe row */
+                flex-direction: row; /* Horizontal scroll thumbnails */
                 width: 100%;
                 overflow-x: auto;
                 max-height: none;
-                padding: 10px 0;
-                -webkit-overflow-scrolling: touch;
+                padding: 5px 0;
                 scrollbar-width: none;
             }
 
             .thumbnail-sidebar::-webkit-scrollbar { display: none; }
 
             .thumbnail-sidebar img {
-                width: 85px; /* Bigger touch targets */
-                height: 85px;
+                width: 70px;
+                height: 70px;
+                flex: 0 0 auto;
             }
 
-            h1 { font-size: 1.4rem; }
-
-            .reserve-button {
-                max-width: 100%; /* Full screen width button */
+            .main-display {
+                height: 350px; /* Reduced height for mobile screens */
+                width: 100%;
             }
+
+            h1 { font-size: 1.3rem; }
+            .current-price { font-size: 1.8rem; }
         }
 
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 25px;
             background: var(--black);
             color: white;
-            margin-top: 50px;
-            font-size: 0.8rem;
+            margin-top: 40px;
+            font-size: 0.75rem;
         }
     </style>
 </head>
