@@ -16,6 +16,40 @@
             --gray: #f4f4f4;
         }
 
+        .reserve-button {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    background: #000000; /* Black background */
+    color: #d4af37; /* Gold text */
+    text-align: center;
+    padding: 18px;
+    text-decoration: none;
+    font-weight: 900;
+    border-radius: 5px;
+    margin-top: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    font-size: 1.1rem;
+    border: 2px solid #000000;
+}
+
+.reserve-button:hover {
+    background: #d4af37; /* Gold background on hover */
+    color: #000000; /* Black text on hover */
+    border-color: #d4af37;
+}
+
+.disclaimer-text {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 15px;
+    line-height: 1.4;
+    max-width: 350px;
+}
+
+
         body {
             margin: 0; padding: 0;
             font-family: 'Montserrat', sans-serif;
@@ -266,6 +300,15 @@
                 <span class="current-price">$1,500</span>
                 <span class="old-price">$3,599</span>
             </div>
+
+            <!-- Call to Reserve Button -->
+<a href="tel:4706365237" class="reserve-button">
+    <i class="fas fa-phone-alt"></i> Call to Reserve
+</a>
+
+<!-- "As Is" Disclaimer Sentence -->
+<p class="disclaimer-text">*Product sold "As Is" for liquidation pricing. Prices subject to change. Local pickup required in Lawrenceville, GA.</p>
+
 
             <div class="product-description">
                 <p>The <strong>LG VeloMax™</strong> breaks the rules of kitchen design. While traditional counter-depth models sacrifice storage for fit, the Counter-Depth MAX engineering provides a massive 26 cu. ft. of space while still sitting flush with your cabinets for a high-end, built-in appearance.</p>

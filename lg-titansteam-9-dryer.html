@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LG ThinQ Turbo360 | Five Star Liquidation</title>
+    <title>LG TitanSteam 9.0 | Five Star Liquidation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
@@ -85,70 +85,78 @@
 
         .back-nav {
             margin-bottom: 20px;
-            justify-content: flex-start;
+            text-align: left;
             border: none;
         }
 
         .product-details-wrapper {
-            display: flex;
-            flex-direction: column; /* عمودي للموبايل */
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
             gap: 40px;
             align-items: flex-start;
         }
 
-        /* --- IMAGE GALLERY --- */
-        .image-gallery {
-            width: 100%;
-            flex: 1;
-            max-width: 550px; /* تحديد عرض الصور */
-            margin: 0 auto;
-        }
-
-        .main-product-image {
-            width: 100%;
-            background: var(--gray);
-            border-radius: 15px;
-            overflow: hidden;
+        /* --- COMPACT SCROLLING GALLERY --- */
+        .gallery-container {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ddd;
-            margin-bottom: 15px;
-        }
-
-        .main-product-image img {
+            gap: 15px;
             width: 100%;
-            max-height: 450px;
-            object-fit: contain; /* للحفاظ على شكل الغسالة */
-            padding: 10px;
         }
 
-        .thumbnail-container {
+        .thumbnail-sidebar {
             display: flex;
+            flex-direction: column;
             gap: 10px;
-            justify-content: center;
+            max-height: 550px; 
+            overflow-y: auto;
+            width: 90px;
+            padding-right: 5px;
         }
 
-        .thumbnail-container img {
-            width: 70px;
-            height: 70px;
+        /* Custom Scrollbar for side gallery */
+        .thumbnail-sidebar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .thumbnail-sidebar::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 10px;
+        }
+
+        .thumbnail-sidebar img {
+            width: 75px;
+            height: 75px;
             object-fit: cover;
             border: 2px solid #ddd;
             border-radius: 8px;
             cursor: pointer;
             transition: 0.3s;
+            flex-shrink: 0;
         }
 
-        .thumbnail-container img.active {
+        .thumbnail-sidebar img.active {
             border-color: var(--gold);
         }
 
-        /* --- PRODUCT INFO --- */
-        .product-info-section {
-            flex: 1;
-            width: 100%;
+        .main-display {
+            flex-grow: 1;
+            background: var(--gray);
+            border-radius: 15px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 550px;
+            overflow: hidden;
         }
 
+        .main-display img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            padding: 20px;
+        }
+
+        /* --- PRODUCT INFO --- */
         .category {
             color: var(--gold);
             text-transform: uppercase;
@@ -164,12 +172,8 @@
             line-height: 1.2;
         }
 
-        .price-details {
-            margin: 20px 0;
-        }
-
         .current-price {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 900;
             color: var(--red);
         }
@@ -181,26 +185,72 @@
             font-size: 1.2rem;
         }
 
+        .reserve-button {
+            display: block;
+            width: 100%;
+            max-width: 380px;
+            background: var(--black);
+            color: var(--gold);
+            text-align: center;
+            padding: 18px;
+            text-decoration: none;
+            font-weight: 900;
+            border-radius: 5px;
+            margin: 25px 0 10px 0;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            border: 2px solid var(--black);
+            transition: 0.3s;
+        }
+
+        .reserve-button:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .disclaimer-text {
+            font-size: 0.75rem;
+            color: #888;
+            line-height: 1.4;
+            max-width: 380px;
+        }
+
         .features-list {
-            padding-left: 20px;
-            margin-top: 20px;
+            padding-left: 0;
+            list-style: none;
+            margin-top: 30px;
         }
 
         .features-list li {
-            margin-bottom: 10px;
-            font-size: 0.95rem;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            display: flex;
+            gap: 12px;
         }
 
-        /* --- DESKTOP ADJUSTMENTS --- */
-        @media (min-width: 900px) {
+        .features-list li::before {
+            content: "✓";
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        /* --- MOBILE OPTIMIZATION --- */
+        @media (max-width: 900px) {
             .product-details-wrapper {
-                flex-direction: row; /* الصور جنب النصوص */
-                align-items: flex-start;
+                grid-template-columns: 1fr;
             }
-            
-            .image-gallery {
-                position: sticky;
-                top: 100px;
+            .gallery-container {
+                flex-direction: column-reverse;
+            }
+            .thumbnail-sidebar {
+                flex-direction: row;
+                width: 100%;
+                overflow-x: auto;
+                max-height: none;
+                padding-bottom: 10px;
+            }
+            .main-display {
+                height: 400px;
             }
         }
 
@@ -217,10 +267,9 @@
 <body>
 
 <header>
-    <a href="index.html" class="logo-link">
+    <a href="index.html">
         <img src="IMG_0000.jpg" alt="Five Star Liquidation" class="main-logo">
     </a>
-
     <div class="info-bar">
         <a href="https://maps.google.com" target="_blank" class="badge">
             <i class="fas fa-map-marker-alt"></i> 2429 Lawrenceville Hwy, GA
@@ -241,48 +290,54 @@
 </nav>
 
 <div class="product-container">
-    <nav class="back-nav">
-        <a href="dryers-archive.html">← Back to Dryers Catalog</a>
-    </nav>
+    <div class="back-nav">
+        <a href="dryers-archive.html" style="text-decoration: none; color: black; font-weight: 700;">← Back to Dryers Catalog</a>
+    </div>
     
     <div class="product-details-wrapper">
-        <div class="image-gallery">
-            <div class="main-product-image">
-                <img id="featured" src="IMG_2570.PNG" alt="LG TitanSteam Main View">
+        
+        <!-- SIDEBAR GALLERY -->
+        <div class="gallery-container">
+            <div class="thumbnail-sidebar" id="thumbBar">
+                <img src="IMG_2570.PNG" class="active" onclick="updateGallery(this)">
+                <img src="IMG_2335.JPEG" onclick="updateGallery(this)">
+                <img src="IMG_2336.JPEG" onclick="updateGallery(this)">
+                <img src="IMG_2337.JPEG" onclick="updateGallery(this)">
+                <img src="IMG_2338.JPEG" onclick="updateGallery(this)">
+                <img src="IMG_2339.JPEG" onclick="updateGallery(this)">
+                <img src="IMG_2344.JPEG" onclick="updateGallery(this)">
+                <img src="IMG_2345.JPEG" onclick="updateGallery(this)">
+                <img src="IMG_2347.JPEG" onclick="updateGallery(this)">
+                <img src="IMG_2348.JPEG" onclick="updateGallery(this)">
+                <img src="IMG_2349.JPEG" onclick="updateGallery(this)">
             </div>
-            <div class="thumbnail-container">
-                <img src="IMG_2570.PNG" class="active" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2335.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2336.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2337.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2338.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2339.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2344.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2345.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2347.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2348.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2349.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+            <div class="main-display">
+                <img id="featured" src="IMG_2570.PNG" alt="LG TitanSteam 9.0">
             </div>
         </div>
 
+        <!-- PRODUCT INFO -->
         <div class="product-info-section">
             <span class="category">Ultra-Capacity Smart Dryer</span>
-            <h1>LG TitanSteam™ 9.0: Ultra-Capacity Smart Dryer in Onyx Steel</h1>
+            <h1>LG TitanSteam™ 9.0: Ultra-Capacity Smart Dryer</h1>
             
             <div class="price-details">
                 <span class="current-price">$750</span>
                 <span class="old-price">$1,799</span>
             </div>
 
+            <a href="tel:4706365237" class="reserve-button">
+                <i class="fas fa-phone-alt"></i> Call to Reserve
+            </a>
+            <p class="disclaimer-text">*Product sold "As Is" for liquidation pricing. Local pickup required in Lawrenceville, GA.</p>
+
             <div class="product-description">
-                <p>Master your laundry day with the <strong>LG TitanSteam™ 9.0</strong>. Boasting one of the largest capacities on the market, this dryer is designed to handle massive loads while using TurboSteam™ technology to refresh clothes in minutes.</p>
-                
                 <ul class="features-list">
-                    <li><strong>9.0 cu. ft. Mega Capacity:</strong> Large enough to dry a king-size comforter and a full set of bedding in a single go.</li>
-                    <li><strong>TurboSteam™ Technology:</strong> Uses high-pressure steam to reduce wrinkles, odors, and static in just 10 minutes.</li>
-                    <li><strong>AI Sensor Dry:</strong> Built-in intelligence selects the optimal drying settings based on fabric moisture levels.</li>
-                    <li><strong>FlowSense™ Duct Clogging Indicator:</strong> Alerts you when it’s time to clean the ducts to ensure high efficiency.</li>
-                    <li><strong>ThinQ® Technology:</strong> Control your laundry remotely and receive cycle notifications on your smartphone.</li>
+                    <li><strong>9.0 cu. ft. Mega Capacity:</strong> Dries a king-size comforter and bedding in one load.</li>
+                    <li><strong>TurboSteam™ Technology:</strong> Removes odors and wrinkles in just 10 minutes.</li>
+                    <li><strong>AI Sensor Dry:</strong> Optimizes drying time based on moisture levels.</li>
+                    <li><strong>ThinQ® Technology:</strong> Start or monitor your laundry from your smartphone.</li>
+                    <li><strong>Onyx Steel:</strong> High-end, durable finish that resists fingerprints.</li>
                 </ul>
             </div>
         </div>
@@ -290,10 +345,11 @@
 </div>
 
 <script>
-    function updateThumbnails(activeImg) {
-        const thumbnails = document.querySelectorAll('.thumbnail-container img');
-        thumbnails.forEach(img => img.classList.remove('active'));
-        activeImg.classList.add('active');
+    function updateGallery(element) {
+        document.getElementById('featured').src = element.src;
+        const thumbs = document.querySelectorAll('.thumbnail-sidebar img');
+        thumbs.forEach(img => img.classList.remove('active'));
+        element.classList.add('active');
     }
 </script>
 
