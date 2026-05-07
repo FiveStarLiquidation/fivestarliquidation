@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Five Star Liquidation | Home</title>
+    
+    <title>Garage-Ready Freezers in Lawrenceville, GA | Five Star Liquidation Deals</title>
+    <meta name="description" content="Shop premium upright freezers at outlet prices. Garage-ready Frigidaire Carbon-Pro and ArcticWhite models available in Lawrenceville, GA. Best local appliance deals!">
+    <meta name="keywords" content="Upright Freezers Lawrenceville GA, Garage Ready Freezer, Frigidaire Freezer Deals, Appliance Outlet Georgia, Discounted Frozen Storage">
+
+    <meta property="og:title" content="Deep Freezer Deals - Five Star Liquidation Lawrenceville">
+    <meta property="og:description" content="Save big on high-capacity upright freezers. Garage-ready models starting at $600.">
+    <meta property="og:image" content="IMG_2666.PNG">
+    <meta property="og:url" content="https://fivestar-site.vercel.app/freezers-archive.html">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     
@@ -12,7 +21,7 @@
             --black: #000000;
             --gold: #d4af37;
             --white: #ffffff;
-            --red: #ff0000; /* Pure red to match the image */
+            --red: #ff0000;
         }
 
         body {
@@ -22,7 +31,6 @@
             overflow-x: hidden;
         }
 
-        /* Header Section */
         header {
             background-color: var(--black);
             padding: 40px 20px;
@@ -48,13 +56,16 @@
             display: block;
         }
 
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 5vw, 3.5rem);
-            margin: 0 0 15px 0;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 5px;
+        /* H1 مخفي لدعم SEO */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
         }
 
         .info-bar {
@@ -80,7 +91,6 @@
             color: var(--gold);
         }
 
-        /* Nav Bar */
         nav {
             background: white;
             padding: 15px 0;
@@ -105,7 +115,6 @@
 
         nav a:hover { color: var(--gold); }
 
-        /* Category Wrapper */
         .category-wrapper {
             max-width: 1200px;
             margin: 40px auto;
@@ -121,19 +130,13 @@
         }
 
         .section-header h2 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 900;
             text-transform: uppercase;
             margin: 0;
             transition: 0.3s;
         }
 
-        .section-header:hover h2 { 
-            color: var(--gold); 
-            transform: scale(1.02); 
-        }
-
-        /* Grid */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -153,7 +156,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow: hidden; /* CRITICAL: Keeps the ribbon inside the card */
+            overflow: hidden;
+            border-radius: 12px;
         }
 
         .card:hover {
@@ -170,7 +174,6 @@
             transition: transform 0.4s ease;
         }
 
-        /* --- UPDATED DIAGONAL SOLD OUT RIBBON --- */
         .sold-out-badge {
             position: absolute;
             top: 20px;
@@ -181,11 +184,9 @@
             font-weight: 900;
             font-size: 0.75rem;
             text-transform: uppercase;
-            transform: rotate(-45deg); /* Creates the diagonal look */
+            transform: rotate(-45deg);
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             z-index: 10;
-            letter-spacing: 1px;
-            white-space: nowrap;
         }
 
         .name { 
@@ -211,13 +212,14 @@
 <body>
 
 <header>
+    <h1 class="visually-hidden">Upright Freezers for Sale in Lawrenceville, GA - Five Star Liquidation</h1>
     <a href="index.html" class="logo-link">
-        <img src="IMG_0000.jpg" alt="Five Star Liquidation" class="main-logo">
+        <img src="IMG_0000.jpg" alt="Five Star Liquidation Logo - Premium Appliance Outlet" class="main-logo">
     </a>
 
     <div class="info-bar">
-        <a href="https://maps.google.com" target="_blank" class="badge">
-            <i class="fas fa-map-marker-alt"></i> 2429 Lawrenceville Hwy, GA
+        <a href="https://www.google.com/maps/search/?api=1&query=2429+Lawrenceville+Hwy+Lawrenceville+GA" target="_blank" class="badge">
+            <i class="fas fa-map-marker-alt"></i> 2429 Lawrenceville Hwy, Lawrenceville, GA
         </a>
         <a href="tel:4706365237" class="badge">
             <i class="fas fa-phone-alt"></i> (470) 636-5237
@@ -235,25 +237,23 @@
 </nav>
 
 <div class="category-wrapper">
-    <a href="freezers-archive.html" class="section-header"><h2>Freezers</h2></a>
+    <div class="section-header">
+        <h2>Garage-Ready Freezers</h2>
+        <p style="color: #666; margin-bottom: 20px;">Reliable storage at unbeatable outlet prices in Lawrenceville.</p>
+    </div>
     
     <div class="products-grid">
-        <!-- ITEM 1: Carbon-Pro (Available) -->
         <a href="frigidaire-carbon-pro-20-upright-freezer.html" class="card">
-            <img src="IMG_2666.PNG" alt="Freezer">
+            <img src="IMG_2666.PNG" alt="Frigidaire Carbon-Pro 20 Upright Freezer Garage Ready Lawrenceville GA">
             <span class="name">Frigidaire Carbon-Pro™ 20: Garage-Ready Performance Upright Freezer</span>
             <div class="price">
                 <span class="old-price">$1,079</span>$600
             </div>
         </a>
 
-        <!-- ITEM 2: ArcticWhite (Sold Out) -->
         <div class="card" id="frigidaire-freezer-sold">
-            <!-- The diagonal ribbon -->
             <div class="sold-out-badge">SOLD OUT</div>
-            
-            <img src="IMG_2655.PNG" alt="Frigidaire ArcticWhite Freezer" style="opacity: 0.5; filter: grayscale(50%);">
-            
+            <img src="IMG_2655.PNG" alt="Frigidaire ArcticWhite 20 Ultra-Capacity Upright Freezer - Sold Out" style="opacity: 0.5; filter: grayscale(50%);">
             <span class="name">Frigidaire ArcticWhite™ 20: Garage-Ready Ultra-Capacity Upright Freezer</span>
             <div class="price">
                 <span class="old-price">$944</span>$600
@@ -263,8 +263,10 @@
 </div>
 
 <footer>
-    <p>© 2026 Five Star Liquidation - Frozen Goods Specialist</p>
-    <p style="font-size: 0.7rem; color: #777; margin-top: 10px;">Visit our Lawrenceville, GA location for more!</p>
+    <p><strong>Five Star Liquidation - Frozen Goods Specialist</strong></p>
+    <p>2429 Lawrenceville Hwy, Lawrenceville, GA 30044</p>
+    <p>© 2026 Five Star Liquidation - Premium Outlet</p>
+    <p style="font-size: 0.7rem; color: #777; margin-top: 10px;">Visit our Lawrenceville location for more garage-ready options!</p>
 </footer>
 
 </body>
