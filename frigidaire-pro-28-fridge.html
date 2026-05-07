@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frigidaire Gallery VortexChef™ | Five Star Liquidation</title>
     
-    <!-- SEO & Social Media -->
-    <meta name="description" content="Get the Frigidaire Gallery VortexChef™ 30-inch Smart Induction Range for only $1,600. Features Total Convection & Air Fry. Shop at Five Star Liquidation.">
+    <title>Frigidaire Professional 36" French Door Refrigerator | Lawrenceville, GA Deals</title>
+    <meta name="description" content="Save big on the Frigidaire Professional 36-Inch French Door Refrigerator (28 Cu. Ft.) at Five Star Liquidation. Featuring Custom-Flex® Temp Drawer & CrispSeal® Fresh. Visit our Lawrenceville, GA showroom.">
+    <meta name="keywords" content="Frigidaire Professional Refrigerator, French Door Fridge Lawrenceville GA, Appliance Liquidation Georgia, 28 Cu. Ft. Refrigerator deals, Smudge-Proof Stainless Steel Fridge">
+
+    <meta property="og:title" content="Frigidaire Professional 36-Inch Refrigerator | Only $1,400">
+    <meta property="og:description" content="Premium French Door Refrigerator with Custom-Flex® Temp Drawer. Huge savings at Five Star Liquidation.">
+    <meta property="og:image" content="IMG_2943.png">
+    <meta property="og:url" content="https://fivestar-site.vercel.app">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
@@ -31,13 +36,13 @@
         }
         .main-logo { max-width: 220px; height: auto; display: block; margin: 0 auto 15px auto; }
         .contact-bar { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .contact-item {
+        .contact-badge {
             text-decoration: none; color: white; font-size: 0.7rem; font-weight: 700;
             display: flex; align-items: center; gap: 8px;
             border: 1px solid rgba(255,255,255,0.3); padding: 7px 18px;
             border-radius: 50px; transition: 0.3s;
         }
-        .contact-item:hover { border-color: var(--gold); color: var(--gold); }
+        .contact-badge:hover { border-color: var(--gold); color: var(--gold); }
 
         /* Navigation */
         nav.main-nav {
@@ -51,11 +56,9 @@
         }
         nav.main-nav a:hover { color: var(--gold); }
 
-        /* Layout */
+        /* Product Layout */
         .container { max-width: 1200px; margin: 20px auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; padding: 20px; }
-
         .back-link { text-decoration: none; color: #999; font-weight: 700; font-size: 0.8rem; display: block; margin-bottom: 15px; }
-        .back-link:hover { color: var(--black); }
 
         /* Image Gallery */
         .image-side { position: sticky; top: 100px; }
@@ -65,9 +68,7 @@
         }
         .main-img img { max-width: 100%; max-height: 100%; object-fit: contain; padding: 20px; transition: opacity 0.3s ease; }
         
-        .thumb-row { 
-            display: flex; gap: 10px; margin-top: 15px; overflow-x: auto; padding-bottom: 5px; 
-        }
+        .thumb-row { display: flex; gap: 10px; margin-top: 15px; overflow-x: auto; padding-bottom: 5px; }
         .thumb-row img { 
             width: 75px; height: 75px; object-fit: cover; border: 2px solid #eee; 
             cursor: pointer; border-radius: 8px; flex-shrink: 0; transition: 0.2s;
@@ -75,10 +76,10 @@
         .thumb-row img.active { border-color: var(--gold); transform: translateY(-3px); }
 
         /* Info Section */
-        .brand-sub { color: var(--gold); font-weight: 900; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
-        .title { font-size: 2rem; font-weight: 900; color: #111; line-height: 1.2; margin: 10px 0 20px 0; }
+        .brand-label { color: var(--gold); font-weight: 900; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        .product-title { font-size: 2.1rem; font-weight: 900; color: #111; line-height: 1.2; margin: 10px 0 20px 0; }
         
-        .price-tag { background: #fff5f4; padding: 20px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid var(--price-red); }
+        .price-container { background: #fff5f4; padding: 20px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid var(--price-red); }
         .price-now { font-size: 3rem; font-weight: 900; color: var(--price-red); }
         .price-was { color: #bbb; text-decoration: line-through; font-size: 1.4rem; font-weight: 400; margin-left: 10px; }
 
@@ -90,7 +91,7 @@
         }
         .reserve-btn:hover { background: var(--gold); color: var(--black); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
-        .as-is-note { font-size: 0.75rem; color: #888; margin-top: 15px; font-style: italic; }
+        .as-is-text { font-size: 0.75rem; color: #888; margin-top: 15px; font-style: italic; }
 
         .features { list-style: none; padding: 0; margin-top: 30px; }
         .features li { margin-bottom: 12px; padding-left: 30px; position: relative; font-size: 0.95rem; }
@@ -100,24 +101,24 @@
         }
 
         footer { text-align: center; padding: 50px 20px; background: var(--black); color: #555; margin-top: 60px; }
-        footer strong { color: var(--gold); }
 
         @media (max-width: 900px) {
             .container { grid-template-columns: 1fr; }
             .image-side { position: static; }
             .main-img { height: 350px; }
+            .product-title { font-size: 1.7rem; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html"><img src="IMG_0000.jpg" alt="Five Star Liquidation" class="main-logo"></a>
+    <a href="index.html"><img src="IMG_0000.jpg" alt="Five Star Liquidation Logo" class="main-logo"></a>
     <div class="contact-bar">
-        <a href="https://maps.google.com/?q=2429+Lawrenceville+Hwy+GA" target="_blank" class="contact-item">
-            <i class="fas fa-map-marker-alt"></i> Lawrenceville, GA
+        <a href="https://maps.google.com" target="_blank" class="contact-badge">
+            <i class="fas fa-map-marker-alt"></i> 2429 Lawrenceville Hwy, GA
         </a>
-        <a href="tel:4706365237" class="contact-item">
+        <a href="tel:4706365237" class="contact-badge">
             <i class="fas fa-phone-alt"></i> (470) 636-5237
         </a>
     </div>
@@ -133,68 +134,90 @@
 </nav>
 
 <div class="container">
-    <!-- Left Side: Images -->
     <div class="image-side">
-        <a href="stoves-archive.html" class="back-link"><i class="fas fa-chevron-left"></i> Back to Stoves & Ovens</a>
+        <a href="fridges-archive.html" class="back-link"><i class="fas fa-chevron-left"></i> Back to Refrigerators</a>
         <div class="main-img">
-            <img id="featured" src="IMG_2582.PNG" alt="Frigidaire Gallery VortexChef">
+            <img id="featured" src="IMG_29488.png" alt="Frigidaire Professional French Door Refrigerator Stainless Steel">
         </div>
         <div class="thumb-row">
-            <img src="IMG_2582.PNG" class="active" onclick="changeImage(this)">
-            <img src="IMG_2428.JPEG" onclick="changeImage(this)">
-            <img src="IMG_2430.JPEG" onclick="changeImage(this)">
-            <img src="IMG_2020.png" onclick="changeImage(this)">
-            <img src="IMG_2021.png" onclick="changeImage(this)">
-            <img src="IMG_2433.JPEG" onclick="changeImage(this)">
+            <img src="IMG_29488.png" class="active" onclick="changeImage(this)" loading="lazy" alt="Front View">
+            <img src="IMG_2948.jpeg" onclick="changeImage(this)" loading="lazy" alt="Open Doors View">
+            <img src="IMG_2949.jpeg" onclick="changeImage(this)" loading="lazy" alt="Interior Details">
+            <img src="IMG_2950.jpeg" onclick="changeImage(this)" loading="lazy" alt="Drawer Details">
+            <img src="IMG_2951.jpeg" onclick="changeImage(this)" loading="lazy" alt="Control Panel">
+            <img src="IMG_2952.jpeg" onclick="changeImage(this)" loading="lazy" alt="Control Panel">
+
         </div>
     </div>
 
-    <!-- Right Side: Info -->
     <div class="info-side">
-        <span class="brand-sub">Premium Smart Induction</span>
-        <h1 class="title">Frigidaire Gallery VortexChef™ 30" Smart Induction Range</h1>
+        <span class="brand-label">Frigidaire Professional Series Model # PRFS2883AF</span>
+        <h1 class="product-title">Frigidaire Professional 36-Inch French Door Refrigerator, 28 Cu. Ft.</h1>
         
-        <div class="price-tag">
-            <span class="price-now">$1,600</span>
-            <span class="price-was">$2,299</span>
-            <div style="color: var(--price-red); font-weight: 800; font-size: 0.8rem; margin-top: 5px;">LIQUIDATION DEAL - SAVE $699</div>
+        <div class="price-container">
+            <span class="price-now">$1,700</span>
+            <span class="price-was">$3,299</span>
+            <div style="color: var(--price-red); font-weight: 800; font-size: 0.8rem; margin-top: 5px;">LIQUIDATION DEAL: 50% OFF</div>
         </div>
 
         <a href="tel:4706365237" class="reserve-btn">
             <i class="fas fa-phone-alt"></i> Call to Reserve
         </a>
-        <p class="as-is-note">*Sold "As Is" for liquidation. Local pickup in Lawrenceville, GA.</p>
+        <p class="as-is-text">*Product sold "As Is" for liquidation pricing. Local pickup in Lawrenceville, GA.</p>
 
         <div class="details">
-            <p>Master every meal with the <strong>Frigidaire Gallery VortexChef™</strong>. This smart induction range combines lightning-fast heat with the versatility of Total Convection and Air Fry.</p>
+            <p style="margin-top: 25px;">Upgrade your kitchen with the <strong>Frigidaire Professional French Door Refrigerator</strong>. Combining high-end performance with a sleek, commercial-grade look for your home.</p>
             
             <ul class="features">
-                <li><strong>Total Convection:</strong> Air Fry, Slow Cook, Steam Bake & more.</li>
-                <li><strong>Induction Speed:</strong> Boils water faster than gas or electric.</li>
-                <li><strong>Integrated Air Fry:</strong> Crispy results with zero guilt.</li>
-                <li><strong>Smudge-Proof®:</strong> Resists fingerprints, easy to clean.</li>
-                <li><strong>Smart Features:</strong> Wi-Fi connected to monitor via smartphone.</li>
+                <li><strong>CrispSeal® Fresh Technology:</strong> Humidity control that keeps produce fresh longer.</li>
+                <li><strong>SpaceWise® Organization:</strong> Flip-up bins and flexible shelving for maximum storage.</li>
+                <li><strong>Custom-Flex® Temp Drawer:</strong> Switch settings from fridge to freezer easily.</li>
+                <li><strong>Smudge-Proof® Stainless Steel:</strong> Commercial look that resists fingerprints.</li>
+                <li><strong>TwinTech™ Dual Cooling:</strong> Preserves food texture and prevents freezer burn.</li>
             </ul>
         </div>
     </div>
 </div>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Frigidaire Professional 36-Inch French Door Refrigerator",
+  "image": "IMG_2943.png",
+  "description": "Premium 28 Cu. Ft. French Door Refrigerator with Custom-Flex Temp Drawer.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Frigidaire Professional"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "1400",
+    "itemCondition": "https://schema.org/UsedCondition",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
 <script>
-    function changeImage(el) {
-        const main = document.getElementById('featured');
-        main.style.opacity = '0';
+    function changeImage(img) {
+        const featured = document.getElementById('featured');
+        featured.style.opacity = '0';
         setTimeout(() => {
-            main.src = el.src;
-            main.style.opacity = '1';
+            featured.src = img.src;
+            featured.style.opacity = '1';
         }, 150);
         
-        document.querySelectorAll('.thumb-row img').forEach(img => img.classList.remove('active'));
-        el.classList.add('active');
+        const thumbs = document.querySelectorAll('.thumb-row img');
+        thumbs.forEach(t => t.classList.remove('active'));
+        img.classList.add('active');
     }
 </script>
 
 <footer>
     <p>© 2026 <strong>Five Star Liquidation</strong> - Premium Outlet Deals</p>
+    <p>2429 Lawrenceville Hwy, Lawrenceville, GA</p>
 </footer>
 
 </body>

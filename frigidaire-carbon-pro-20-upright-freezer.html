@@ -3,7 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frigidaire Carbon-Pro | Five Star Liquidation</title>
+    
+    <!-- SEO المتقدم للفريزر -->
+    <title>Frigidaire Carbon-Pro™ 20 Garage-Ready Freezer | Lawrenceville, GA</title>
+    <meta name="description" content="Buy the Frigidaire Carbon-Pro™ 20 Cu. Ft. Garage-Ready Upright Freezer for only $600. Features EvenTemp™ Cooling & Power Outage Assurance. Located in Lawrenceville, GA.">
+    <meta name="keywords" content="Frigidaire Carbon-Pro Freezer, Garage Ready Freezer Georgia, Upright Freezer Liquidation, EvenTemp Cooling, Appliance Deals Lawrenceville">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Frigidaire Carbon-Pro™ Freezer | $600 at Five Star Liquidation">
+    <meta property="og:image" content="IMG_2666.PNG">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
@@ -21,9 +30,10 @@
             font-family: 'Montserrat', sans-serif;
             background-color: var(--white);
             color: #333;
+            line-height: 1.6;
         }
 
-        /* --- HEADER --- */
+        /* تحسين الهيدر */
         header {
             background-color: var(--black);
             padding: 20px 10px;
@@ -31,231 +41,106 @@
             border-bottom: 4px solid var(--gold);
         }
 
-        .main-logo {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-        }
+        .main-logo { width: 100%; max-width: 280px; height: auto; }
 
-        .info-bar {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
+        .info-bar { display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
 
         .badge {
-            color: var(--white);
-            text-decoration: none;
-            padding: 6px 15px;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 700;
+            color: var(--white); text-decoration: none; padding: 6px 15px;
+            border: 1px solid rgba(255,255,255,0.2); border-radius: 50px;
+            font-size: 0.7rem; font-weight: 700; transition: 0.3s;
         }
+        .badge:hover { background: rgba(255,255,255,0.1); }
 
-        /* --- NAV BAR --- */
+        /* بار التنقل الذكي */
         nav.main-nav {
-            background: white;
-            padding: 15px 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            border-bottom: 1px solid #eee;
-            flex-wrap: wrap;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            background: white; padding: 15px 0; display: flex;
+            justify-content: center; gap: 15px; border-bottom: 1px solid #eee;
+            flex-wrap: wrap; position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
         nav.main-nav a {
-            text-decoration: none;
-            color: black;
-            font-weight: 800;
-            font-size: 0.7rem;
-            text-transform: uppercase;
+            text-decoration: none; color: black; font-weight: 800;
+            font-size: 0.7rem; text-transform: uppercase; padding: 5px 10px;
         }
 
-        /* --- PRODUCT LAYOUT --- */
-        .product-container {
-            max-width: 1100px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
+        .product-container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
 
-        .back-nav {
-            margin-bottom: 25px;
-        }
+        .back-nav { margin-bottom: 25px; }
+        .back-nav a { text-decoration: none; color: #888; font-weight: 700; font-size: 0.85rem; }
+        .back-nav a:hover { color: var(--gold); }
 
-        .back-nav a {
-            text-decoration: none;
-            color: #666;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
+        .product-details-wrapper { display: flex; flex-direction: column; gap: 40px; }
 
-        .product-details-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        /* --- GALLERY --- */
-        .image-gallery {
-            flex: 1;
-            width: 100%;
-        }
+        /* الجاليري */
+        .image-gallery { flex: 1; width: 100%; max-width: 500px; margin: 0 auto; }
 
         .main-product-image {
-            background: var(--gray);
-            border-radius: 12px;
-            border: 1px solid #ddd;
-            height: 450px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-            overflow: hidden;
+            background: var(--gray); border-radius: 12px; border: 1px solid #eee;
+            height: 500px; display: flex; align-items: center;
+            justify-content: center; margin-bottom: 15px; overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
         }
 
-        .main-product-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            padding: 20px;
-        }
+        .main-product-image img { max-width: 100%; max-height: 100%; object-fit: contain; padding: 20px; transition: transform 0.5s; }
 
-        .thumbnail-container {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
+        .thumbnail-container { display: flex; gap: 10px; justify-content: center; overflow-x: auto; padding-bottom: 5px; }
 
         .thumbnail-container img {
-            width: 70px;
-            height: 70px;
-            object-fit: cover;
-            border: 2px solid #ddd;
-            border-radius: 6px;
-            cursor: pointer;
+            width: 75px; height: 75px; object-fit: cover;
+            border: 2px solid #eee; border-radius: 8px; cursor: pointer; transition: 0.2s;
         }
 
-        .thumbnail-container img.active {
-            border-color: var(--gold);
-        }
+        .thumbnail-container img.active { border-color: var(--gold); transform: scale(1.05); }
 
-        /* --- INFO SECTION --- */
-        .product-info-section {
-            flex: 1;
-        }
+        /* قسم المعلومات */
+        .product-info-section { flex: 1; }
 
-        .category {
-            color: var(--gold);
-            text-transform: uppercase;
-            font-weight: 900;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
+        .category { color: var(--gold); text-transform: uppercase; font-weight: 900; font-size: 0.75rem; letter-spacing: 1.5px; }
 
-        h1 {
-            font-size: 1.8rem;
-            font-weight: 900;
-            margin: 10px 0;
-            line-height: 1.2;
-        }
+        h1 { font-size: 2rem; font-weight: 900; margin: 15px 0; line-height: 1.2; letter-spacing: -0.5px; }
 
-        .current-price {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--red);
-        }
+        .price-details { margin: 25px 0; display: flex; align-items: baseline; gap: 15px; }
+        .current-price { font-size: 2.8rem; font-weight: 900; color: var(--red); }
+        .old-price { text-decoration: line-through; color: #aaa; font-size: 1.4rem; }
 
-        .old-price {
-            text-decoration: line-through;
-            color: #888;
-            margin-left: 10px;
-            font-size: 1.2rem;
-        }
-
-        /* --- BUTTONS --- */
         .reserve-button {
-            display: block;
-            background: var(--black);
-            color: var(--gold);
-            text-align: center;
-            padding: 18px;
-            text-decoration: none;
-            font-weight: 900;
-            border-radius: 5px;
-            margin-top: 25px;
-            text-transform: uppercase;
-            font-size: 1.1rem;
-            border: 2px solid var(--black);
-            transition: 0.3s;
+            display: block; background: var(--black); color: var(--gold);
+            text-align: center; padding: 20px; text-decoration: none;
+            font-weight: 900; border-radius: 8px; margin-top: 30px;
+            text-transform: uppercase; font-size: 1.1rem; border: 2px solid var(--black);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .reserve-button:hover {
-            background: var(--gold);
-            color: var(--black);
-        }
+        .reserve-button:hover { background: var(--gold); color: var(--black); transform: translateY(-3px); }
 
-        .disclaimer-text {
-            font-size: 0.75rem;
-            color: #888;
-            margin-top: 15px;
-            line-height: 1.4;
-        }
+        .disclaimer-text { font-size: 0.75rem; color: #999; margin-top: 20px; font-style: italic; }
 
-        .features-list {
-            padding-left: 0;
-            list-style: none;
-            margin-top: 30px;
-        }
+        .features-list { padding: 0; list-style: none; margin-top: 40px; background: var(--gray); padding: 25px; border-radius: 12px; }
 
-        .features-list li {
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-            display: flex;
-            gap: 10px;
-        }
+        .features-list li { margin-bottom: 15px; font-size: 0.95rem; display: flex; align-items: flex-start; gap: 12px; }
 
-        .features-list li::before {
-            content: "✓";
-            color: var(--gold);
-            font-weight: bold;
-        }
+        .features-list li::before { content: "\f058"; font-family: "Font Awesome 5 Free"; font-weight: 900; color: var(--gold); }
 
-        /* --- DESKTOP --- */
         @media (min-width: 900px) {
-            .product-details-wrapper {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-            .image-gallery {
-                position: sticky;
-                top: 100px;
-            }
+            .product-details-wrapper { flex-direction: row; align-items: flex-start; }
+            .image-gallery { position: sticky; top: 120px; margin: 0; }
+            h1 { font-size: 2.5rem; }
         }
 
-        footer {
-            text-align: center;
-            padding: 40px;
-            background: var(--black);
-            color: white;
-            margin-top: 60px;
-            font-size: 0.8rem;
-        }
+        footer { text-align: center; padding: 50px 20px; background: var(--black); color: #777; margin-top: 80px; }
+        footer strong { color: var(--gold); }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html" class="logo-link">
-        <img src="IMG_0000.jpg" alt="Five Star Liquidation" class="main-logo">
+    <a href="index.html">
+        <img src="IMG_0000.jpg" alt="Five Star Liquidation Logo" class="main-logo">
     </a>
     <div class="info-bar">
-        <a href="https://maps.google.com" target="_blank" class="badge">
+        <a href="https://maps.google.com/?q=2429+Lawrenceville+Hwy,+Lawrenceville,+GA" target="_blank" class="badge">
             <i class="fas fa-map-marker-alt"></i> 2429 Lawrenceville Hwy, GA
         </a>
         <a href="tel:4706365237" class="badge">
@@ -275,19 +160,19 @@
 
 <div class="product-container">
     <nav class="back-nav">
-        <a href="freezers-archive.html">← Back to Freezers</a>
+        <a href="freezers-archive.html"><i class="fas fa-chevron-left"></i> Back to Freezers Collection</a>
     </nav>
     
     <div class="product-details-wrapper">
         <div class="image-gallery">
             <div class="main-product-image">
-                <img id="featured" src="IMG_2666.PNG" alt="Frigidaire Carbon-Pro Freezer">
+                <img id="featured" src="IMG_2666.PNG" alt="Frigidaire Carbon-Pro 20 Cu. Ft. Freezer Main View">
             </div>
 
             <div class="thumbnail-container">
-                <img src="IMG_2666.PNG" class="active" onclick="changeImage(this)">
-                <img src="IMG_2644.JPEG" onclick="changeImage(this)">
-                <img src="IMG_2609.JPEG" onclick="changeImage(this)">
+                <img src="IMG_2666.PNG" alt="Front View" class="active" onclick="changeImage(this)">
+                <img src="IMG_2644.JPEG" alt="Interior Shelving" onclick="changeImage(this)">
+                <img src="IMG_2609.JPEG" alt="Control Panel" onclick="changeImage(this)">
             </div>
         </div>
 
@@ -301,27 +186,31 @@
             </div>
 
             <a href="tel:4706365237" class="reserve-button">
-                <i class="fas fa-phone-alt"></i> Call to Reserve
+                <i class="fas fa-calendar-check"></i> Call to Reserve Now
             </a>
 
-            <p class="disclaimer-text">*Product sold "As Is" for liquidation pricing. Prices subject to change. Local pickup required in Lawrenceville, GA.</p>
+            <p class="disclaimer-text">*Liquidation Price: Product sold "As Is". Items move fast, call to verify availability at our Lawrenceville store.</p>
 
-            <div class="product-description">
-                <ul class="features-list">
-                    <li><strong>Garage-Ready Performance:</strong> Maintains freezing in temperatures from 0°F to 110°F.</li>
-                    <li><strong>EvenTemp™ Cooling System:</strong> Constantly circulates cold air for uniform temperature.</li>
-                    <li><strong>Flexible Interior:</strong> Adjustable metallic-finish shelves and deep bottom basket.</li>
-                    <li><strong>Power Outage Assurance:</strong> Keeps food frozen for over two days without power.</li>
-                    <li><strong>Frost-Free Design:</strong> Automatic defrost system prevents ice build-up.</li>
-                </ul>
-            </div>
+            <ul class="features-list">
+                <li><strong>Garage-Ready Performance:</strong> Engineered to handle extreme exterior temperatures (0°F to 110°F).</li>
+                <li><strong>EvenTemp™ Cooling System:</strong> Constant airflow prevents warm spots and freezer burn.</li>
+                <li><strong>Power Outage Assurance:</strong> Superior insulation keeps food frozen for up to 48 hours without power.</li>
+                <li><strong>Flexible Interior Storage:</strong> Adjustable shelves with premium metallic trim and deep storage baskets.</li>
+                <li><strong>Auto-Defrost Technology:</strong> Never manually defrost again with the integrated frost-free system.</li>
+            </ul>
         </div>
     </div>
 </div>
 
 <script>
     function changeImage(element) {
-        document.getElementById('featured').src = element.src;
+        const featured = document.getElementById('featured');
+        featured.style.opacity = '0'; // تأثير تلاشي بسيط
+        setTimeout(() => {
+            featured.src = element.src;
+            featured.style.opacity = '1';
+        }, 150);
+        
         const thumbnails = document.querySelectorAll('.thumbnail-container img');
         thumbnails.forEach(img => img.classList.remove('active'));
         element.classList.add('active');
@@ -329,8 +218,12 @@
 </script>
 
 <footer>
-    <p>© 2026 Five Star Liquidation - Premium Outlet Deals</p>
+    <p>© 2026 <strong>Five Star Liquidation</strong> - Premium Appliance Outlet</p>
+    <p>Located in Lawrenceville, Georgia</p>
 </footer>
+
+<!-- Tidio Chat Integration -->
+<script src="//code.tidio.co/6u23qs6h8ykov0eenqlb9kgss0ebe9ya.js" async></script>
 
 </body>
 </html>

@@ -145,6 +145,7 @@
             flex-direction: column;
             align-items: center;
             cursor: pointer;
+            border-radius: 8px;
         }
 
         .card:hover {
@@ -153,14 +154,13 @@
             border-color: var(--gold);
         }
 
-        /* FIXED IMAGE STYLING */
         .card img {
             width: 100%;
-            height: 250px; /* Locked height for row alignment */
-            object-fit: contain; /* Keeps product proportions correct */
+            height: 250px;
+            object-fit: contain;
             margin-bottom: 15px;
             transition: transform 0.4s ease;
-            background-color: #fff; /* Ensures a clean look for mixed aspect ratios */
+            background-color: #fff;
         }
 
         .card:hover img {
@@ -170,7 +170,7 @@
         .name { 
             font-weight: 700; 
             display: block; 
-            min-height: 40px; 
+            min-height: 45px; 
             margin-bottom: 10px; 
             font-size: 0.95rem;
             line-height: 1.2;
@@ -185,7 +185,7 @@
             opacity: 0.5;
         }
         
-        #fridge-sold .name, #fridge-sold .current-price {
+        #fridge-sold .name, #fridge-sold .price {
             color: #999 !important;
         }
 
@@ -207,10 +207,14 @@
 
         footer { background: black; color: white; padding: 40px; text-align: center; margin-top: 50px; }
 
+        @media (max-width: 992px) {
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
         @media (max-width: 768px) {
             .products-grid { grid-template-columns: 1fr; }
             .card { max-width: 350px; margin: 0 auto; }
-            .card img { height: 280px; } /* Slightly larger images for single column mobile */
+            .card img { height: 280px; }
         }
     </style>
 </head>
@@ -221,7 +225,7 @@
         <img src="IMG_0000.jpg" alt="Five Star Liquidation" class="main-logo">
     </a>
     <div class="info-bar">
-        <a href="https://maps.google.com" target="_blank" class="badge">
+        <a href="https://www.google.com/maps/search/?api=1&query=2429+Lawrenceville+Hwy+Lawrenceville+GA" target="_blank" class="badge">
             <i class="fas fa-map-marker-alt"></i> 2429 Lawrenceville Hwy, GA
         </a>
         <a href="tel:4706365237" class="badge">
@@ -243,49 +247,49 @@
     <a href="fridges-archive.html" class="section-header"><h2>Refrigerators</h2></a>
     
     <div class="products-grid">
-        <!-- LG GrandVision -->
+        <!-- 1. LG GrandVision -->
         <div class="card" onclick="window.location.href='lg-grandvision-30-instaview.html';">
             <img src="IMG_2664.PNG" alt="LG Fridge">
             <span class="name">LG GrandVision™ 30: InstaView™ Refrigerator with Craft Ice & Multi-Convert Drawer</span>
             <div class="price"><span class="old-price">$4,799</span>$2,400</div>
         </div>
 
-        <!-- Samsung PureGlass -->
+        <!-- 2. Samsung PureGlass -->
         <div class="card" onclick="window.location.href='samsung-bespoke-pureglass-4door.html';">
             <img src="IMG_2589.PNG" alt="Samsung Fridge">
             <span class="name">Samsung Bespoke PureGlass™: 4-Door Smart Suite with Integrated Beverage Center</span>
             <div class="price"><span class="old-price">$3,399</span>$1,800</div>
         </div>
 
-        <!-- Samsung FlexSteel -->
+        <!-- 3. Samsung FlexSteel -->
         <div class="card" onclick="window.location.href='samsung-bespoke-flexsteel-4door.html';">
             <img src="IMG_2025.png" alt="Samsung Fridge">
             <span class="name">Samsung Bespoke FlexSteel™: Counter-Depth 4-Door Suite with Hidden Beverage Center</span>
             <div class="price"><span class="old-price">$3,799</span>$1,900</div>
         </div>
 
-        <!-- LG CrystalCore -->
+        <!-- 4. LG CrystalCore -->
         <div class="card" onclick="window.location.href='lg-crystalcore-27-instaview.html';">
             <img src="IMG_2665.PNG" alt="LG Fridge">
             <span class="name">LG CrystalCore™ 27 cu. ft. Side-By-Side InstaView Refrigerator with Craft Ice</span>
             <div class="price"><span class="old-price">$2,599</span>$1,300</div>
         </div>
 
-        <!-- Samsung AquaPrime -->
+        <!-- 5. Samsung AquaPrime -->
         <div class="card" onclick="window.location.href='samsung-aquaprime-25-3door.html';">
             <img src="IMG_7666.png" alt="Samsung Fridge">
             <span class="name">Samsung AquaPrime™ 25 cu. ft. Smart 3-Door Refrigerator with Beverage Center & Dual Ice</span>
             <div class="price"><span class="old-price">$2,599</span>$1,100</div>
         </div>
 
-        <!-- Samsung LinearElite -->
+        <!-- 6. Samsung LinearElite -->
         <div class="card" onclick="window.location.href='samsung-bespoke-linearelite-24-counter.html';">
             <img src="IMG_2662.PNG" alt="Samsung Fridge">
             <span class="name">Samsung Bespoke LinearElite™ 24 cu. ft. Counter Depth Smart Refrigerator with Beverage Center</span>
             <div class="price"><span class="old-price">$3,199</span>$1,500</div>
         </div>
 
-        <!-- SOLD OUT: LG PrismaMax -->
+        <!-- 7. SOLD OUT: LG PrismaMax -->
         <div class="card" id="fridge-sold">
             <div class="ribbon">Sold Out</div>
             <img src="IMG_2661.PNG" alt="Sold Out Fridge">
@@ -293,135 +297,135 @@
             <div class="price"><span class="old-price">$4,299</span>$2,000</div>
         </div>
 
-        <!-- Samsung SideSleek -->
+        <!-- 8. Samsung SideSleek -->
         <div class="card" onclick="window.location.href='samsung-bespoke-sidesleek-23-counter.html';">
             <img src="IMG_2660.PNG" alt="Samsung Fridge">
             <span class="name">Samsung Bespoke SideSleek™ 23 cu. ft. Counter Depth Side by Side Refrigerator with Beverage Center</span>
             <div class="price"><span class="old-price">$2,399</span>$1,200</div>
         </div>
 
-        <!-- Samsung FlowVista -->
+        <!-- 9. Samsung FlowVista -->
         <div class="card" onclick="window.location.href='samsung-flowvista-25-3door.html';">
             <img src="IMG_2659.PNG" alt="Samsung Fridge">
             <span class="name">Samsung FlowVista™ 25 cu. ft. Smart 3-Door French Door Refrigerator with Beverage Center & Dual Ice</span>
             <div class="price"><span class="old-price">$2,200</span>$1,100</div>
         </div>
 
-        <!-- LG AuraMax -->
+        <!-- 10. LG AuraMax -->
         <div class="card" onclick="window.location.href='lg-auramax-27-counter-depth.html';">
             <img src="IMG_2658.PNG" alt="LG Fridge">
             <span class="name">LG AuraMax™ 27 cu. ft. Smart Counter Depth MAX French Door Refrigerator</span>
             <div class="price"><span class="old-price">$3,199</span>$1,300</div>
         </div>
 
-        <!-- Samsung OptiMerge -->
+        <!-- 11. Samsung OptiMerge -->
         <div class="card" onclick="window.location.href='samsung-bespoke-optimerge-24-counter.html';">
             <img src="IMG_2657.PNG" alt="Samsung Fridge">
             <span class="name">Samsung Bespoke OptiMerge™ 24 cu. ft. Counter Depth Smart Refrigerator with Beverage Center</span>
             <div class="price"><span class="old-price">$3,099</span>$1,500</div>
         </div>
 
-        <!-- Samsung HydroVault -->
+        <!-- 12. Samsung HydroVault -->
         <div class="card" onclick="window.location.href='samsung-hydrovault-25-3door.html';">
             <img src="IMG_2656.PNG" alt="Samsung Fridge">
             <span class="name">Samsung HydroVault™ 25 cu. ft. Smart 3-Door Refrigerator with Beverage Center & Dual Ice</span>
             <div class="price"><span class="old-price">$2,600</span>$1,300</div>
         </div>
 
-        <!-- Samsung ZenithQuad -->
+        <!-- 13. Samsung ZenithQuad -->
         <div class="card" onclick="window.location.href='samsung-bespoke-zenithquad-29-4door.html';">
             <img src="IMG_2599.PNG" alt="Samsung Fridge">
             <span class="name">Samsung Bespoke ZenithQuad™ 29 cu. ft. 4-Door Smart Refrigerator with Beverage Center</span>
             <div class="price"><span class="old-price">$2,999</span>$1,500</div>
         </div>
 
-        <!-- LG ArcticStream -->
+        <!-- 14. LG ArcticStream -->
         <div class="card" onclick="window.location.href='lg-arcticstream-26-bottom-freezer.html';">
             <img src="IMG_2594.PNG" alt="LG Fridge">
             <span class="name">LG ArcticStream™ 26 cu. ft. Bottom Freezer Refrigerator with Multi-Air Flow & Smart Cooling</span>
             <div class="price"><span class="old-price">$2,199</span>$1,000</div>
         </div>
 
-        <!-- Samsung OrbitSphere -->
+        <!-- 15. Samsung OrbitSphere -->
         <div class="card" onclick="window.location.href='samsung-orbitsphere-29-3door.html';">
             <img src="IMG_2592.PNG" alt="Samsung Fridge">
             <span class="name">Samsung OrbitSphere™ 29 cu. ft. 3-Door Refrigerator with Zero Clearance Fit & Sphere Ice</span>
             <div class="price"><span class="old-price">$2,899</span>$1,300</div>
         </div>
 
-        <!-- Samsung LuminaVast -->
+        <!-- 16. Samsung LuminaVast -->
         <div class="card" onclick="window.location.href='samsung-bespoke-luminavast-30-white-glass.html';">
             <img src="IMG_2590.PNG" alt="Samsung Fridge">
             <span class="name">Samsung Bespoke LuminaVast™ 30 cu. ft. Smart 3-Door Refrigerator in White Glass with Beverage Center</span>
             <div class="price"><span class="old-price">$3,099</span>$1,500</div>
         </div>
 
-        <!-- Samsung EliteQuad -->
+        <!-- 17. Samsung EliteQuad -->
         <div class="card" onclick="window.location.href='samsung-bespoke-elitequad-29-4door.html';">
             <img src="IMG_9999.png" alt="Samsung Fridge">
             <span class="name">Samsung Bespoke EliteQuad™ 29 cu. ft. 4-Door Smart Refrigerator with Beverage Center</span>
             <div class="price"><span class="old-price">$2,999</span>$1,500</div>
         </div>
 
-        <!-- Samsung FlexiNode -->
+        <!-- 18. Samsung FlexiNode -->
         <div class="card" onclick="window.location.href='samsung-bespoke-flexinode-23-counter-depth.html';">
             <img src="IMG_2587.PNG" alt="Samsung Fridge">
             <span class="name">Samsung Bespoke FlexiNode™ 23 cu. ft. Counter Depth 4-Door Flex Refrigerator with Beverage Center</span>
             <div class="price"><span class="old-price">$3,799</span>$1,900</div>
         </div>
 
-        <!-- LG VeloMax -->
+        <!-- 19. LG VeloMax -->
         <div class="card" onclick="window.location.href='lg-velomax-26-counter-depth.html';">
             <img src="IMG_2586.PNG" alt="LG Fridge">
             <span class="name">LG VeloMax™ 26 cu. ft. Smart Counter-Depth MAX Refrigerator with Dual Ice Makers</span>
             <div class="price"><span class="old-price">$3,599</span>$1,500</div>
         </div>
 
-        <!-- LG VividMax -->
+        <!-- 20. LG VividMax -->
         <div class="card" onclick="window.location.href='lg-vividmax-29-instaview.html';">
             <img src="IMG_2585.PNG" alt="LG Fridge">
             <span class="name">LG VividMax™ 29 cu. ft. Smart 4-Door Refrigerator with MyColor InstaView & MAX Capacity</span>
             <div class="price"><span class="old-price">$3,999</span>$2,000</div>
         </div>
 
-        <!-- Frigidaire Professional -->
-        <div class="card" onclick="window.location.href='frigidaire-professional-36-refrigerator.html';">
-            <img src="IMG_2943.png" alt="Frigidaire Professional Refrigerator">
-            <span class="name">Frigidaire Professional 36-Inch French Door Refrigerator, 28 Cu. Ft. – Stainless Steel</span>
+        <!-- 21. Samsung Professional -->
+        <div class="card" onclick="window.location.href='samsung-bespoke-refrigerator.html';">
+            <img src="IMG_2943.png" alt="Samsung Professional Refrigerator">
+            <span class="name">Samsung Bespoke AI 24 cu ft French Door Refrigerator – Dual Ice Maker, AutoFill Pitcher</span>
             <div class="price"><span class="old-price">$2,799</span>$1,400</div>
         </div>
         
-        <!-- Samsung 4 Ice Types -->
-        <div class="card" onclick="window.location.href='frigidaire-pro.html';">
-            <img src="IMG_29488.png" alt="Samsung Refrigerator">
-            <span class="name">Samsung 36-Inch 31 Cu. Ft. French Door Refrigerator – Stainless Steel with 4 Ice Types</span>
+        <!-- 22. Samsung 4 Ice Types -->
+        <div class="card" onclick="window.location.href='frigidaire-pro-28-fridge.html';">
+            <img src="IMG_29488.png" alt="Frigidaire Refrigerator">
+            <span class="name">Frigidaire Professional 28 cu ft French Door Refrigerator – 36 Inch Stainless Steel</span>
             <div class="price"><span class="old-price">$3,200</span>$1,700</div>
         </div>
 
-        <!-- Samsung Mega Capacity -->
+        <!-- 23. Samsung Mega Capacity -->
         <div class="card" onclick="window.location.href='samsung-mega-fridge.html';">
             <img src="IMG_29533.png" alt="Samsung Refrigerator">
             <span class="name">Samsung 36-Inch French Door Refrigerator, 31 Cu. Ft. Mega Capacity – 4 Ice Types</span>
             <div class="price"><span class="old-price">$2,899</span>$1,300</div>
         </div>
 
-        <!-- Frigidaire Gallery -->
+        <!-- 24. Frigidaire Gallery -->
         <div class="card" onclick="window.location.href='frigidaire-fridge-26.html';">
             <img src="IMG_29599.png" alt="Frigidaire Gallery Refrigerator">
             <span class="name">Frigidaire Gallery 36-Inch 4-Door French Door Refrigerator – 26.3 Cu. Ft.</span>
             <div class="price"><span class="old-price">$3,199</span>$1,700</div>
         </div>
 
-        <!-- Frigidaire Gallery -->
+        <!-- 25. Samsung Bespoke 29cuft -->
         <div class="card" onclick="window.location.href='samsung-bespoke-29cuft-beverage-center.html';">
-            <img src="IMG_29566.png" alt="Frigidaire Gallery Refrigerator">
+            <img src="IMG_29566.png" alt="Samsung Bespoke">
             <span class="name">Samsung Bespoke 29 cu ft 4-Door French Door Fridge with Beverage Center – 36" Stainless Steel</span>
             <div class="price"><span class="old-price">$2,999</span>$1,300</div>
         </div>
 
-        <!-- Frigidaire Gallery -->
+        <!-- 26. LG 30cuft Smart -->
         <div class="card" onclick="window.location.href='lg-30cuft-smart-french-door-internal-water.html';">
-            <img src="IMG_29722.png" alt="Frigidaire Gallery Refrigerator">
+            <img src="IMG_29722.png" alt="LG Smart Fridge">
             <span class="name">LG 30 cu ft Smart French Door Refrigerator – Standard Depth, Internal Water Dispenser, PrintProof Stainless Steel</span>
             <div class="price"><span class="old-price">$3,299</span>$1,800</div>
         </div>
@@ -430,7 +434,7 @@
 
 <footer>
     <p>© 2026 Five Star Liquidation - Premium Appliance Outlet</p>
-    <p style="font-size: 0.7rem; color: #333; margin-top: 10px;">Lawrenceville, GA Showroom</p>
+    <p style="font-size: 0.7rem; color: #777; margin-top: 10px;">Lawrenceville, GA Showroom</p>
 </footer>
 
 </body>

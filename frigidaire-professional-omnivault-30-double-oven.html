@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LG ThinQ Turbo360 | Five Star Liquidation</title>
+    <title>Frigidaire Professional OmniVault™ | Five Star Liquidation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
@@ -12,198 +12,116 @@
             --black: #000000;
             --gold: #d4af37;
             --white: #ffffff;
-            --red: #e74c3c;
-            --gray: #f4f4f4;
+            --price-red: #f47a69;
+            --gray-bg: #f9f9f9;
+            --transition: all 0.3s ease;
         }
 
-        body {
-            margin: 0; padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--white);
-            color: #333;
-        }
+        body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: var(--white); color: #333; }
 
         /* --- HEADER & NAV --- */
-        header {
-            background-color: var(--black);
-            padding: 15px 10px;
-            text-align: center;
-            border-bottom: 4px solid var(--gold);
-        }
+        header { background-color: var(--black); padding: 20px 10px; text-align: center; border-bottom: 4px solid var(--gold); }
+        .main-logo { max-width: 250px; height: auto; margin-bottom: 15px; transition: var(--transition); }
+        .main-logo:hover { transform: scale(1.02); }
 
-        .main-logo { width: 100%; max-width: 280px; height: auto; }
-
-        .info-bar {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
+        .contact-bar { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .badge { 
+            color: white; text-decoration: none; padding: 6px 15px; 
+            border: 1px solid rgba(255,255,255,0.3); border-radius: 50px; 
+            font-size: 0.7rem; font-weight: 700; transition: var(--transition);
         }
-
-        .badge {
-            color: var(--white);
-            text-decoration: none;
-            padding: 5px 12px;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 50px;
-            font-size: 0.65rem;
-            font-weight: 700;
+        .badge:hover { background: var(--gold); color: var(--black); border-color: var(--gold); }
+        
+        nav { 
+            display: flex; justify-content: center; gap: 20px; padding: 15px; 
+            background: white; border-bottom: 1px solid #eee; flex-wrap: wrap; 
+            position: sticky; top: 0; z-index: 1000; 
         }
-
-        nav {
-            background: white;
-            padding: 12px 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            border-bottom: 1px solid #eee;
-            flex-wrap: wrap;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        nav a { 
+            text-decoration: none; color: black; font-weight: 800; 
+            font-size: 0.75rem; text-transform: uppercase; transition: var(--transition);
         }
-
-        nav a {
-            text-decoration: none;
-            color: black;
-            font-weight: 800;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-        }
+        nav a:hover { color: var(--gold); transform: translateY(-2px); }
 
         /* --- LAYOUT --- */
-        .product-container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 0 20px;
+        .product-container { max-width: 1200px; margin: 30px auto; padding: 0 20px; min-height: 80vh; }
+        .back-link { 
+            text-decoration: none; color: #999; font-weight: 700; 
+            font-size: 0.8rem; margin-bottom: 20px; display: inline-block; transition: var(--transition);
         }
+        .back-link:hover { color: var(--black); padding-left: 5px; }
 
-        .back-nav { margin-bottom: 20px; border: none; }
+        .product-flex { display: flex; flex-direction: row; gap: 50px; align-items: flex-start; }
 
-        .product-details-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            align-items: flex-start;
+        /* --- IMAGE SIDE --- */
+        .image-side { flex: 1; max-width: 500px; position: sticky; top: 100px; }
+        .main-img-box { 
+            background: var(--gray-bg); border-radius: 10px; border: 1px solid #eee; 
+            height: 450px; display: flex; align-items: center; justify-content: center; overflow: hidden; 
         }
-
-        /* --- IMAGE GALLERY (Thumbnails now correctly underneath) --- */
-        .image-gallery {
-            width: 100%;
-            flex: 1;
-            max-width: 550px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column; /* This stacks main image on top of thumbnails */
+        .main-img-box img { max-width: 90%; max-height: 90%; object-fit: contain; }
+        
+        .thumb-grid { display: flex; gap: 10px; margin-top: 15px; justify-content: center; }
+        .thumb-grid img { 
+            width: 70px; height: 70px; object-fit: cover; border: 2px solid #eee; 
+            border-radius: 5px; cursor: pointer; transition: var(--transition);
         }
+        .thumb-grid img:hover { border-color: var(--gold); opacity: 0.8; }
+        .thumb-grid img.active { border-color: var(--gold); }
 
-        .main-product-image {
-            width: 100%;
-            background: var(--gray);
-            border-radius: 15px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ddd;
-            margin-bottom: 15px;
+        /* --- CONTENT SIDE --- */
+        .content-side { flex: 1.2; }
+        .brand-tag { color: var(--gold); font-weight: 900; font-size: 0.85rem; text-transform: uppercase; }
+        h1 { font-size: 2.2rem; font-weight: 900; margin: 10px 0; line-height: 1.1; }
+        
+        .price-box { border-left: 5px solid var(--price-red); padding-left: 20px; margin: 25px 0; }
+        .price-now { font-size: 3.5rem; font-weight: 900; color: var(--price-red); display: block; }
+        .price-save { color: var(--price-red); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
+
+        .call-btn { 
+            display: inline-block; background: black; color: var(--gold); width: 100%; max-width: 350px; 
+            text-align: center; padding: 18px; text-decoration: none; font-weight: 900; 
+            border-radius: 5px; font-size: 1.2rem; text-transform: uppercase; margin-top: 10px;
+            transition: var(--transition); border: 2px solid black;
         }
+        .call-btn:hover { background: var(--gold); color: black; border-color: var(--gold); box-shadow: 0 5px 15px rgba(212,175,55,0.3); }
+        
+        .as-is { font-size: 0.75rem; color: #ccc; margin-top: 10px; font-style: italic; }
 
-        .main-product-image img {
-            width: 100%;
-            max-height: 450px;
-            object-fit: contain;
-            padding: 10px;
+        .desc { margin-top: 30px; font-size: 1rem; line-height: 1.6; color: #666; }
+        .features-list { list-style: none; padding: 0; margin-top: 20px; }
+        .features-list li { margin-bottom: 12px; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; transition: var(--transition); }
+        .features-list li:hover { color: black; transform: translateX(5px); }
+        .features-list li i { color: var(--gold); font-size: 0.8rem; }
+
+        /* --- FOOTER (الختامية) --- */
+        footer { 
+            background: var(--black); color: white; padding: 60px 20px 20px; margin-top: 100px; text-align: center;
+            border-top: 4px solid var(--gold);
         }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left; }
+        .footer-section h3 { color: var(--gold); text-transform: uppercase; font-size: 1rem; margin-bottom: 20px; }
+        .footer-section p, .footer-section a { color: #bbb; text-decoration: none; font-size: 0.85rem; line-height: 1.8; transition: var(--transition); }
+        .footer-section a:hover { color: var(--gold); }
+        
+        .copyright { margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; font-size: 0.75rem; color: #666; }
 
-        /* --- THUMBNAIL GRID (5 PER ROW) --- */
-        .thumbnail-container {
-            display: flex !important;
-            flex-direction: row !important; /* Forces them horizontal */
-            flex-wrap: wrap !important;
-            gap: 8px; 
-            width: 100%;
-            box-sizing: border-box;
+        /* Responsive */
+        @media (max-width: 900px) {
+            .product-flex { flex-direction: column; }
+            .image-side { position: static; max-width: 100%; }
+            .main-img-box { height: 350px; }
+            .footer-content { text-align: center; }
         }
-
-        .thumbnail-container img {
-            /* (100% width - 32px total for 4 gaps of 8px) / 5 images */
-            width: calc((100% - 32px) / 5) !important; 
-            aspect-ratio: 1 / 1 !important;
-            object-fit: cover !important;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-            box-sizing: border-box !important;
-        }
-
-        .thumbnail-container img.active {
-            border-color: var(--gold);
-        }
-
-        /* --- PRODUCT INFO --- */
-        .product-info-section { flex: 1; width: 100%; }
-
-        .category {
-            color: var(--gold);
-            text-transform: uppercase;
-            font-weight: 900;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-
-        h1 { font-size: 1.8rem; font-weight: 900; margin: 10px 0; line-height: 1.2; }
-
-        .price-details { margin: 20px 0; }
-        .current-price { font-size: 2rem; font-weight: 900; color: var(--red); }
-        .old-price { text-decoration: line-through; color: #888; margin-left: 10px; font-size: 1.2rem; }
-
-        .reserve-button {
-            display: block;
-            width: 100%;
-            max-width: 350px;
-            background: #000000;
-            color: #d4af37;
-            text-align: center;
-            padding: 18px;
-            text-decoration: none;
-            font-weight: 900;
-            border-radius: 5px;
-            margin-top: 25px;
-            text-transform: uppercase;
-            font-size: 1.1rem;
-            border: 2px solid #000000;
-        }
-
-        .reserve-button:hover { background: #d4af37; color: #000000; border-color: #d4af37; }
-
-        .disclaimer-text { font-size: 0.75rem; color: #888; margin-top: 15px; max-width: 350px; }
-
-        .features-list { padding-left: 20px; margin-top: 20px; }
-        .features-list li { margin-bottom: 10px; font-size: 0.95rem; }
-
-        @media (min-width: 900px) {
-            .product-details-wrapper { flex-direction: row; }
-            .image-gallery { position: sticky; top: 100px; }
-        }
-
-        footer { text-align: center; padding: 30px; background: var(--black); color: white; margin-top: 50px; }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html" class="logo-link">
-        <img src="IMG_0000.jpg" alt="Five Star Liquidation" class="main-logo">
-    </a>
-    <div class="info-bar">
-        <a href="https://maps.google.com" target="_blank" class="badge">
-            <i class="fas fa-map-marker-alt"></i> 2429 Lawrenceville Hwy, GA
-        </a>
-        <a href="tel:4706365237" class="badge">
-            <i class="fas fa-phone-alt"></i> (470) 636-5237
-        </a>
+    <a href="index.html"><img src="IMG_0000.jpg" alt="Five Star Liquidation" class="main-logo"></a>
+    <div class="contact-bar">
+        <a href="#" class="badge"><i class="fas fa-map-marker-alt"></i> 2429 Lawrenceville Hwy, GA</a>
+        <a href="tel:4706365237" class="badge"><i class="fas fa-phone-alt"></i> (470) 636-5237</a>
     </div>
 </header>
 
@@ -217,66 +135,78 @@
 </nav>
 
 <div class="product-container">
-    <nav class="back-nav">
-        <a href="stoves-archive.html">← Back to Stoves & Ovens</a>
-    </nav>
+    <a href="stoves-archive.html" class="back-link">← Back to Stoves & Ovens</a>
     
-    <div class="product-details-wrapper">
-        <!-- Main Gallery Container -->
-        <div class="image-gallery">
-            <!-- Big Image Container -->
-            <div class="main-product-image">
-                <img id="featured" src="IMG_2579.PNG" alt="Main View">
+    <div class="product-flex">
+        <div class="image-side">
+            <div class="main-img-box">
+                <img id="featured" src="IMG_2579.PNG" alt="Product Image">
             </div>
-
-            <!-- Horizontal Grid Container -->
-            <div class="thumbnail-container">
-                <img src="IMG_2579.PNG" class="active" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2406.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2407.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2408.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
-                <img src="IMG_2409.JPEG" onclick="document.getElementById('featured').src=this.src; updateThumbnails(this)">
+            <div class="thumb-grid">
+                <img src="IMG_2579.PNG" class="active" onclick="changeImg(this)">
+                <img src="IMG_2406.JPEG" onclick="changeImg(this)">
+                <img src="IMG_2407.JPEG" onclick="changeImg(this)">
+                <img src="IMG_2408.JPEG" onclick="changeImg(this)">
+                <img src="IMG_2409.JPEG" onclick="changeImg(this)">
             </div>
         </div>
 
-        <div class="product-info-section">
-            <span class="category">Professional Double Wall Oven</span>
+        <div class="content-side">
+            <span class="brand-tag">Professional Double Wall Oven</span>
             <h1>Frigidaire Professional OmniVault™ 30 in. Double Wall Oven</h1>
             
-            <div class="price-details">
-                <span class="current-price">$1,900</span>
-                <span class="old-price">$3,099</span>
+            <div class="price-box">
+                <span class="price-now">$1,900</span>
+                <span class="price-save">Liquidation Special: Save $1,199</span>
             </div>
 
-            <a href="tel:4706365237" class="reserve-button">
-                <i class="fas fa-phone-alt"></i> Call to Reserve
-            </a>
+            <a href="tel:4706365237" class="call-btn"><i class="fas fa-phone-alt"></i> Call to Reserve</a>
+            <p class="as-is">*Product sold "As Is" for liquidation pricing. Local pickup in Lawrenceville, GA.</p>
 
-            <p class="disclaimer-text">*Product sold "As Is" for liquidation pricing. Local pickup required in Lawrenceville, GA.</p>
-
-            <div class="product-description">
-                <ul class="features-list">
-                    <li><strong>Total Convection:</strong> Air Fry, Slow Cook, and Steam Roast capabilities.</li>
-                    <li><strong>Dual Capacity:</strong> Two independent ovens for massive cooking space.</li>
-                    <li><strong>No Preheat:</strong> Start baking immediately on single racks.</li>
-                    <li><strong>Smudge-Proof®:</strong> High-grade stainless steel that resists fingerprints.</li>
-                </ul>
-            </div>
+            <p class="desc">Maximize your cooking potential with the <strong>Frigidaire Professional OmniVault™</strong>. Features Total Convection technology for professional-grade results in your home kitchen.</p>
+            
+            <ul class="features-list">
+                <li><i class="fas fa-check"></i> <strong>Total Convection:</strong> Air Fry, Slow Cook, and Steam Roast.</li>
+                <li><i class="fas fa-check"></i> <strong>Dual Oven Capacity:</strong> Massive space for multi-course meals.</li>
+                <li><i class="fas fa-check"></i> <strong>No Preheat:</strong> Instant baking on single racks.</li>
+                <li><i class="fas fa-check"></i> <strong>Smudge-Proof®:</strong> Stainless steel that resists fingerprints.</li>
+            </ul>
         </div>
     </div>
 </div>
 
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Five Star Liquidation</h3>
+            <p>Your premium outlet for high-end home appliances at liquidation prices. We specialize in top brands with unbeatable deals.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a><br>
+            <a href="stoves-archive.html">Stoves & Ovens</a><br>
+            <a href="fridges-archive.html">Refrigerators</a><br>
+            <a href="washers-archive.html">Washers & Dryers</a>
+        </div>
+        <div class="footer-section">
+            <h3>Visit Our Store</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 2429 Lawrenceville Hwy,<br>Lawrenceville, GA 30044</p>
+            <p><i class="fas fa-phone-alt"></i> (470) 636-5237</p>
+            <p><i class="fas fa-clock"></i> <Mon-Sun></Mon-Sun>: 11AM - 9PM</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2026 Five Star Liquidation. All appliances sold "As Is". All rights reserved.</p>
+    </div>
+</footer>
+
 <script>
-    function updateThumbnails(activeImg) {
-        const thumbnails = document.querySelectorAll('.thumbnail-container img');
-        thumbnails.forEach(img => img.classList.remove('active'));
-        activeImg.classList.add('active');
+    function changeImg(img) {
+        document.getElementById('featured').src = img.src;
+        document.querySelectorAll('.thumb-grid img').forEach(t => t.classList.remove('active'));
+        img.classList.add('active');
     }
 </script>
-
-<footer>
-    <p>© 2026 Five Star Liquidation - Premium Outlet Deals</p>
-</footer>
 
 </body>
 </html>
